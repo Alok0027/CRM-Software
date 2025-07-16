@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import BlogPage from './pages/Blog';
 import DesignPrinciplesPost from './pages/DesignPrinciplesPost';
 import InfluencerMarketingPost from './pages/InfluencerMarketingPost';
+import PricingPage from './pages/PricingPage';
 
 // Solution Pages
 import SmallBusiness from './pages/Solution/SmallBusiness';
@@ -71,6 +72,7 @@ function App() {
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog/design-principles" element={<DesignPrinciplesPost />} />
             <Route path="blog/influencer-marketing" element={<InfluencerMarketingPost />} />
+            <Route path="pricing" element={<PricingPage />} />
             <Route path="login" element={<Login />} />
           </Route>
 

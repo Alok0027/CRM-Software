@@ -1,0 +1,12 @@
+/* Global Button Styles */
+button,
+a[role="button"],
+.btn {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover,
+a[role="button"]:hover,
+.btn:hover {
+  transform: scale(0.95);
+}
