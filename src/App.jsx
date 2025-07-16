@@ -71,10 +71,10 @@ function App() {
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog/design-principles" element={<DesignPrinciplesPost />} />
             <Route path="blog/influencer-marketing" element={<InfluencerMarketingPost />} />
+            <Route path="login" element={<Login />} />
           </Route>
 
           {/* Standalone Pages */}
-          <Route path="/login" element={<Login />} />
 
           {/* Dashboard Layout */}
           <Route
