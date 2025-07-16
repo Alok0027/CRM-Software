@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="flex items-center mb-4 sm:mb-0">
             <img src={zestful} alt="Zestful Logo" className="h-8 mr-2" />
           </div>
-          <p className="text-gray-500 text-sm mb-4 sm:mb-0">Designed & Built by <a href="#" className="text-orange-500 font-medium">Flowversity</a> Powered by <a href="#" className="text-orange-500 font-medium">Webflow</a></p>
+          <p className="text-gray-500 text-sm mb-4 sm:mb-0">Designed & Built by <a href="#" className="text-orange-500 font-medium">Alok</a> Powered by <a href="#" className="text-orange-500 font-medium">Nexolve</a></p>
           <div className="flex space-x-3">
             <a href="#" className="bg-orange-500 text-white p-3 rounded-full hover:bg-orange-600 transition"><FaTwitter /></a>
             <a href="#" className="bg-orange-500 text-white p-3 rounded-full hover:bg-orange-600 transition"><FaFacebookF /></a>
