@@ -15,6 +15,9 @@ import BlogOverviewPage from './pages/BlogOverviewPage';
 import DesignPrinciplesPost from './pages/DesignPrinciplesPost';
 import InfluencerMarketingPost from './pages/InfluencerMarketingPost';
 import PricingPage from './pages/PricingPage';
+import AboutUs from './pages/Aboutus';
+import SiteContact from './pages/Contact';
+
 
 // Solution Pages
 import SmallBusiness from './pages/Solution/SmallBusiness';
@@ -23,8 +26,11 @@ import Enterprises from './pages/Solution/Enterprises';
 
 // Support Pages
 import Help from './pages/Support/Help';
-import Contact from './pages/Support/Contact';
+import SupportContact from './pages/Support/Contact';
+import HelpCenter from './pages/HelpCenter';
+import FeaturesPage from './pages/FeaturesPage';
 import Documentation from './pages/Support/Documentation';
+import ArticlePage from './pages/ArticlePage';
 
 // Dashboard (assuming separate layout)
 import Sidebar from './components/Sidebar';
@@ -68,13 +74,18 @@ function App() {
             <Route path="solutions/mid-market" element={<MidMarket />} />
             <Route path="solutions/enterprise" element={<Enterprises />} />
             <Route path="support/help" element={<Help />} />
-            <Route path="support/contact" element={<Contact />} />
+            <Route path="support/contact" element={<SupportContact />} />
             <Route path="support/docs" element={<Documentation />} />
             <Route path="blog" element={<BlogPage />} />
             <Route path="blog-overview" element={<BlogOverviewPage />} />
             <Route path="blog/design-principles" element={<DesignPrinciplesPost />} />
             <Route path="blog/influencer-marketing" element={<InfluencerMarketingPost />} />
             <Route path="pricing" element={<PricingPage />} />
+            <Route path="features" element={<FeaturesPage />} />
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="contact" element={<SiteContact />} />
+            <Route path="help-center" element={<HelpCenter />} />
+            <Route path="help-center/:slug" element={<ArticlePage />} />
             <Route path="login" element={<Login />} />
           </Route>
 

@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import zestful from '../assets/zestful.svg';
 
 const Footer = () => {
-  const websiteLinks = ['Home', 'Features', 'Pricing', 'About Us', 'Blog', 'Integrations', 'Career', 'Contact', 'Help Center'];
+  const websiteLinks = {
+    'Home': '/',
+    'Features': '/features',
+    'Pricing': '/pricing',
+    'About Us': '/about-us',
+    'Blog': '/blog',
+    'Integrations': '/features',
+    'Help Center': '/help-center',
+  };
   const utilityLinks = ['Sign Up', 'Sign In', 'Forgot Password', 'Reset Password', 'Confirm E-Mail', 'Terms & Conditions', 'Privacy Policy'];
   const adminLinks = ['Style Guide', 'Licenses', 'Changelog', 'Navbars', 'Footers', 'CTA Sections', 'Notification Banners'];
 
@@ -26,7 +35,14 @@ const Footer = () => {
             <div>
               <h3 className="font-medium text-xl mb-4">Website</h3>
               <ul>
-                {websiteLinks.map(link => <li key={link} className="mb-2"><a href="#" className="text-gray-600 hover:text-orange-500">{link}</a></li>)}
+                {Object.entries(websiteLinks).map(([name, path]) => (
+                  <li key={name} className="mb-2">
+                    <Link to={path} className="text-gray-600 hover:text-orange-500">{name}</Link>
+                  </li>
+                ))}
+                <li className="mb-2">
+                  <Link to="/contact" className="text-gray-600 hover:text-orange-500">Contact</Link>
+                </li>
               </ul>
             </div>
             <div>
@@ -48,6 +64,7 @@ const Footer = () => {
           <div className="flex items-center mb-4 sm:mb-0">
             <img src={zestful} alt="Zestful Logo" className="h-8 mr-2" />
           </div>
+          
           <p className="text-gray-500 text-sm mb-4 sm:mb-0">Designed & Built by <a href="#" className="text-orange-500 font-medium">Alok</a> Powered by <a href="#" className="text-orange-500 font-medium">Nexolve</a></p>
           <div className="flex space-x-3">
             <a href="#" className="bg-orange-500 text-white p-3 rounded-full hover:bg-orange-600 transition"><FaTwitter /></a>

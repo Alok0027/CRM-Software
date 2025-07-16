@@ -130,6 +130,9 @@ const Navbar = () => {
             <Link to="/pricing">Pricing</Link>
           </AnimatedNavItem>
           <AnimatedNavItem>
+            <Link to="/about-us">About Us</Link>
+          </AnimatedNavItem>
+          <AnimatedNavItem>
             <Link to="/blog">Blog</Link>
           </AnimatedNavItem>
         </nav>
