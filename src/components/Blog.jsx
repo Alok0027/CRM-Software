@@ -45,7 +45,7 @@ const Blog = () => {
               Discover valuable insights, tips, and industry news in our blog. We keep you up-to-date with the latest trends, best practices, and innovative ideas to help you succeed online. Dive into our blog and stay informed as you enhance your digital presence.
             </p>
           </div>
-          <Link to="/blog" className="bg-orange-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-orange-600 transition duration-300 whitespace-nowrap">
+          <Link to="/blog-overview" className="bg-orange-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-orange-600 transition duration-300 whitespace-nowrap">
             Read More
           </Link>
         </div>

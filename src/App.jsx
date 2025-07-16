@@ -11,6 +11,7 @@ import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import BlogPage from './pages/Blog';
+import BlogOverviewPage from './pages/BlogOverviewPage';
 import DesignPrinciplesPost from './pages/DesignPrinciplesPost';
 import InfluencerMarketingPost from './pages/InfluencerMarketingPost';
 import PricingPage from './pages/PricingPage';
@@ -70,6 +71,7 @@ function App() {
             <Route path="support/contact" element={<Contact />} />
             <Route path="support/docs" element={<Documentation />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="blog-overview" element={<BlogOverviewPage />} />
             <Route path="blog/design-principles" element={<DesignPrinciplesPost />} />
             <Route path="blog/influencer-marketing" element={<InfluencerMarketingPost />} />
             <Route path="pricing" element={<PricingPage />} />
