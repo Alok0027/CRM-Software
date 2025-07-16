@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Preloader
 import Preloader from './components/Preloader';
@@ -35,6 +35,9 @@ import IntegrationsPage from './pages/IntegrationsPage';
 import TermsAndConditions from './pages/TermsAndConditions';
 import ConfirmEmail from './pages/ConfirmEmail';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 
 // Dashboard (assuming separate layout)
 import Sidebar from './components/Sidebar';
@@ -43,6 +46,10 @@ import Dashboard from './pages/Dashboard';
 import Contacts from './pages/Contacts';
 import Task from './pages/Task';
 import Setting from './pages/Setting';
+import Marketplace from './pages/DashboardPages/Marketplace';
+import AnalyticsDashboard from './pages/DashboardPages/Tables';
+import Kanban from './pages/DashboardPages/Kanban';
+import Profile from './pages/DashboardPages/Profile';
 
 const DashboardLayout = ({ children }) => (
   <div className="flex">
@@ -95,6 +102,9 @@ function App() {
             <Route path="confirm-email" element={<ConfirmEmail />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="reset-password" element={<ResetPassword />} />
           </Route>
 
           {/* Standalone Pages */}
@@ -115,6 +125,23 @@ function App() {
           <Route
             path="/dashboard/settings"
             element={<DashboardLayout><Setting /></DashboardLayout>}
+          />
+          <Route
+            path="/dashboard/marketplace"
+            element={<DashboardLayout><Marketplace /></DashboardLayout>}
+          />
+          <Route path="/dashboard/tables" element={<Navigate to="/dashboard/analytics" replace />} />
+          <Route
+            path="/dashboard/analytics"
+            element={<DashboardLayout><AnalyticsDashboard /></DashboardLayout>}
+          />
+          <Route
+            path="/dashboard/kanban"
+            element={<DashboardLayout><Kanban /></DashboardLayout>}
+          />
+          <Route
+            path="/dashboard/profile"
+            element={<DashboardLayout><Profile /></DashboardLayout>}
           />
         </Routes>
       )}

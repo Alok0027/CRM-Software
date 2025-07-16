@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const GoogleIcon = () => (
   <svg className="w-5 h-5 mr-2" viewBox="0 0 48 48">
@@ -16,48 +16,50 @@ const AppleIcon = () => (
     </svg>
 )
 
-const Login = () => {
-  const navigate = useNavigate();
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    navigate('/dashboard');
-  };
-
+const Signup = () => {
   return (
     <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Welcome back!
+          <h2 className="mt-6 text-center text-3xl font-medium text-gray-900">
+            Create your Account!
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Please fill in your Email and Password to Sign In.
+            Please fill in your Details below.
           </p>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleLogin}>
+        <form className="mt-8 space-y-6" action="#" method="POST">
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email-address" className="font-medium text-gray-700">Email Address</label>
-              <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm mt-1" placeholder="Your Email Address" />
+              <label htmlFor="full-name" className="font-normal text-gray-700">Full Name</label>
+              <input id="full-name" name="full-name" type="text" required className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm mt-1" placeholder="Your Full Name" />
             </div>
              <div className="pt-4">
-              <label htmlFor="password" className="font-medium text-gray-700">Password</label>
+              <label htmlFor="email-address" className="font-normal text-gray-700">Email Address</label>
+              <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring--500 focus:border-orange-500 focus:z-10 sm:text-sm mt-1" placeholder="Your Email Address" />
+            </div>
+             <div className="pt-4">
+              <label htmlFor="password" className="font-normal text-gray-700">Password</label>
               <input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm mt-1" placeholder="Password" />
+            </div>
+             <div className="pt-4">
+              <label htmlFor="confirm-password" className="font-normal text-gray-700">Confirm Password</label>
+              <input id="confirm-password" name="confirm-password" type="password" required className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm mt-1" placeholder="Confirm Password" />
             </div>
           </div>
 
-          <div className="flex items-center justify-end">
-            <div className="text-sm">
-              <Link to="/forgot-password" className="font-medium text-orange-600 hover:text-orange-500">
-                Forgot your password?
-              </Link>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input id="terms" name="terms" type="checkbox" className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" />
+              <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+                I have read & agree to the <Link to="/terms" className="font-medium text-orange-600 hover:text-orange-500">Terms & Conditions</Link>
+              </label>
             </div>
           </div>
 
           <div>
             <button type="submit" className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-              Sign In
+              Sign Up
             </button>
           </div>
           
@@ -70,13 +72,13 @@ const Login = () => {
           <div>
              <button type="button" className="group relative w-full flex justify-center py-3 px-4 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
                 <GoogleIcon />
-                Sign In with Google
+                Sign Up with Google
             </button>
           </div>
           <div>
              <button type="button" className="group relative w-full flex justify-center py-3 px-4 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 mt-3">
                 <AppleIcon />
-                Sign In with Apple
+                Sign Up with Apple
             </button>
           </div>
         </form>
@@ -88,4 +90,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

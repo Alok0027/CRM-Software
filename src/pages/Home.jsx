@@ -2,14 +2,13 @@ import React from 'react';
 
 import Hero from '../components/Hero';
 
-import Benefit from '../components/Benefit';
 import Features from '../components/Features';
+import Discover from '../components/Discover';
 import Integration from '../components/Integration';
-import Why from '../components/Why';
-import MobileFeature from '../components/Mobilefeature';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
 import Blog from '../components/Blog';
+import Why from '../components/Why';
 
 
 const Home = () => {
@@ -17,12 +16,10 @@ const Home = () => {
     <>
       
       <Hero />
-      <Benefit />
-      
+      <Discover />
       <Features />
-      <Integration />
       <Why />
-      <MobileFeature />
+      <Integration />
       <Testimonials />
       <Pricing />
       <Blog />

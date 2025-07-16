@@ -49,11 +49,31 @@ const Footer = () => {
               <h3 className="font-medium text-xl mb-4">Utility Pages</h3>
               <ul>
                 {utilityLinks.map(link => {
-                  const loginLinks = ['Sign Up', 'Sign In', 'Forgot Password', 'Reset Password'];
-                  if (loginLinks.includes(link)) {
+                  if (link === 'Sign Up') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/signup" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Sign In') {
                     return (
                       <li key={link} className="mb-2">
                         <Link to="/login" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Forgot Password') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/forgot-password" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Reset Password') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/reset-password" className="text-gray-600 hover:text-orange-500">{link}</Link>
                       </li>
                     );
                   }

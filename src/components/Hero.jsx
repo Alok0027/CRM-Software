@@ -24,14 +24,11 @@ const logos = [
 const Hero = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+    window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -44,25 +41,27 @@ const Hero = () => {
     transition: 'transform 0.2s ease-out',
   };
   return (
-    <div className="text-center py-20 px-5 bg-white font-sans">
-      <div className="max-w-4xl mx-auto mb-6">
-        <h1 className="text-6xl font-medium mb-5 leading-tight text-gray-800">
-          Unleash the Power of Your Business with <span className="text-orange-500">Zestful!</span>
+    <div className="text-center py-16 px-5 bg-white font-sans mt-20">
+      <div className="relative h-64 mb-10">
+        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-7xl font-black leading-tight" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <span className="text-neutral-700">Unleash the Power of Your</span><br /><span className="text-neutral-700">Business with</span> <span className="text-orange-500">Zestful</span><span className="text-neutral-700">!</span>
         </h1>
+      </div>
+      <div className="max-w-4xl mx-auto text-center">
         <p className="text-lg font-light text-gray-600 mb-8 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Your gateway to a vibrant online presence. Our SaaS Webflow Template infuses your website with citrusy energy, ensuring you stand out and captivate your audience. Elevate your digital presence with Zestful today!
         </p>
       </div>
       <div className="mt-16">
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden logo-carousel">
           <div className="flex animate-scroll">
             {[...logos, ...logos].map((logo, index) => (
               <img key={index} src={logo.src} alt={logo.alt} className="h-8 mx-16 flex-shrink-0 grayscale opacity-60" />
             ))}
           </div>
         </div>
-        <div className="mt-16 flex justify-center">
-           <img src={heroimg} alt="Dashboard preview" className="w-screen h-screen rounded-lg shadow-2xl" style={imageStyle} />
+        <div className="mt-12 flex justify-center">
+           <img src={heroimg} alt="Dashboard preview" className="w-full rounded-lg shadow-2xl" style={imageStyle} />
         </div>
       </div>
     </div>

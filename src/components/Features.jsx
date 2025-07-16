@@ -24,9 +24,11 @@ const Features = () => {
           </p>
           <div className="grid grid-cols-2 gap-6">
             {featuresData.map((feature, index) => (
-              <div key={index} className="bg-white/20 rounded-lg p-6 flex items-center space-x-4">
-                <img src={feature.icon} alt={feature.title} className="h-8 w-8 bg-amber-50" />
-                <h3 className="font-medium text-xl">{feature.title}</h3>
+              <div key={index} className="bg-amber-600 rounded-xl p-6 flex items-center space-x-6">
+                <div className="bg-white p-4 rounded-lg">
+                  <img src={feature.icon} alt={feature.title} className="h-12 w-12" />
+                </div>
+                <h3 className="font-semibold text-2xl text-white">{feature.title}</h3>
               </div>
             ))}
           </div>
@@ -34,7 +36,7 @@ const Features = () => {
 
         <div className="relative">
           <img src={features1} alt="Dashboard Main" className="relative z-10 rounded-lg shadow-2xl" />
-          <img src={features2} alt="Dashboard Tables" className="absolute top-1/2 left-1/4 z-20 w-3/4 rounded-lg shadow-2xl" />
+          <img src={features2} alt="Dashboard Tables" className="absolute top-[40%] left-[30%] z-20 w-4/5 rounded-lg shadow-2xl" />
         </div>
       </div>
     </section>

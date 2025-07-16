@@ -33,18 +33,17 @@ const Dashboard = () => {
   return (
         <div className="bg-gray-100 min-h-screen px-6 py-4 text-gray-800">
       <div className="grid grid-cols-12 gap-6">
-        {/* Top Summary Cards */}
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Earnings</p>
-          <h3 className="text-xl font-medium">$350.4</h3>
+          <h3 className="text-xl font-normal">$350.4</h3>
         </div>
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Spend this month</p>
-          <h3 className="text-xl font-medium">$642.39</h3>
+          <h3 className="text-xl font-normal">$642.39</h3>
         </div>
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Sales</p>
-          <h3 className="text-xl font-medium text-orange-500">$574.34</h3>
+          <h3 className="text-xl font-normal text-orange-500">$574.34</h3>
           <p className="text-xs text-green-500">+23% since last month</p>
         </div>
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
