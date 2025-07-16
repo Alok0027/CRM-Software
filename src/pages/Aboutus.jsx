@@ -91,7 +91,7 @@ const AboutUs = () => {
       {/* Values Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Company Values</h2>
+          <h2 className="text-4xl font-medium text-gray-800 mb-4">Our Company Values</h2>
           <p className="text-gray-600 mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
         </div>
         <div className="container mx-auto grid md:grid-cols-2 gap-8">
@@ -107,7 +107,7 @@ const AboutUs = () => {
 
       {/* Brands Section */}
       <section className="py-20 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Top Brands that worked with Us</h2>
+        <h2 className="text-3xl font-medium text-gray-800 mb-4">Top Brands that worked with Us</h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
         <div className="container mx-auto flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
           {logos.map((logo, index) => (

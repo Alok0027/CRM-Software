@@ -84,7 +84,7 @@ const BlogOverviewPage = () => {
     <div className="bg-white mt-10">
       <header className="bg-orange-500 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-white">Blog</h1>
+          <h1 className="text-5xl font-medium text-white">Blog</h1>
           <p className="text-white mt-4 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
         </div>
       </header>
@@ -103,7 +103,7 @@ const BlogOverviewPage = () => {
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
                   <span>{post.date} &middot; {post.readTime}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 h-24">{post.title}</h3>
+                <h3 className="text-2xl font-medium text-gray-800 mb-3 h-24">{post.title}</h3>
               </div>
             </Link>
           ))}

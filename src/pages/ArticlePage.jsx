@@ -17,14 +17,14 @@ const ArticlePage = () => {
       case 'step':
         return (
           <div key={index} className="mb-6">
-            <h3 className="font-bold text-lg text-gray-800 mb-2">{item.title}</h3>
+            <h3 className="font-medium text-lg text-gray-800 mb-2">{item.title}</h3>
             <p className="text-gray-700">{item.text}</p>
           </div>
         );
       case 'tips':
         return (
           <div key={index} className="mt-8">
-            <h3 className="font-bold text-lg text-gray-800 mb-2">{item.title}</h3>
+            <h3 className="font-medium text-lg text-gray-800 mb-2">{item.title}</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               {item.items.map((tip, i) => <li key={i}>{tip}</li>)}
             </ul>
@@ -66,7 +66,7 @@ const ArticlePage = () => {
               <div className="mt-8 text-center">
                   <p className='text-gray-600 mb-4'>Couldn't find what you're looking for? Contact our Support Team!</p>
                   <Link to="/support/contact">
-                    <button className="bg-orange-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">Support</button>
+                    <button className="bg-orange-500 text-white font-medium py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">Support</button>
                   </Link>
               </div>
             </div>

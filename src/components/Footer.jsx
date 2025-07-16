@@ -10,7 +10,7 @@ const Footer = () => {
     'Pricing': '/pricing',
     'About Us': '/about-us',
     'Blog': '/blog',
-    'Integrations': '/features',
+    'Integrations': '/integrations',
     'Help Center': '/help-center',
   };
   const utilityLinks = ['Sign Up', 'Sign In', 'Forgot Password', 'Reset Password', 'Confirm E-Mail', 'Terms & Conditions', 'Privacy Policy'];
@@ -41,14 +41,49 @@ const Footer = () => {
                   </li>
                 ))}
                 <li className="mb-2">
-                  <Link to="/contact" className="text-gray-600 hover:text-orange-500">Contact</Link>
+                  <Link to="/support/contact" className="text-gray-600 hover:text-orange-500">Contact</Link>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="font-medium text-xl mb-4">Utility Pages</h3>
               <ul>
-                {utilityLinks.map(link => <li key={link} className="mb-2"><a href="#" className="text-gray-600 hover:text-orange-500">{link}</a></li>)}
+                {utilityLinks.map(link => {
+                  const loginLinks = ['Sign Up', 'Sign In', 'Forgot Password', 'Reset Password'];
+                  if (loginLinks.includes(link)) {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/login" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Terms & Conditions') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/terms-and-conditions" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Confirm E-Mail') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/confirm-email" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  if (link === 'Privacy Policy') {
+                    return (
+                      <li key={link} className="mb-2">
+                        <Link to="/privacy-policy" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={link} className="mb-2">
+                      <a href="#" className="text-gray-600 hover:text-orange-500">{link}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div>

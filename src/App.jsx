@@ -31,6 +31,10 @@ import HelpCenter from './pages/HelpCenter';
 import FeaturesPage from './pages/FeaturesPage';
 import Documentation from './pages/Support/Documentation';
 import ArticlePage from './pages/ArticlePage';
+import IntegrationsPage from './pages/IntegrationsPage';
+import TermsAndConditions from './pages/TermsAndConditions';
+import ConfirmEmail from './pages/ConfirmEmail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Dashboard (assuming separate layout)
 import Sidebar from './components/Sidebar';
@@ -86,6 +90,10 @@ function App() {
             <Route path="contact" element={<SiteContact />} />
             <Route path="help-center" element={<HelpCenter />} />
             <Route path="help-center/:slug" element={<ArticlePage />} />
+            <Route path="integrations" element={<IntegrationsPage />} />
+            <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="confirm-email" element={<ConfirmEmail />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="login" element={<Login />} />
           </Route>
 
