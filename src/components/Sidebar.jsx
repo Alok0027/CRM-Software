@@ -4,18 +4,19 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FiHome,
   FiUser,
+  FiUsers,
   FiLogIn,
   FiGrid,
   FiTrello,
-  FiShoppingCart,
   FiHelpCircle
 } from 'react-icons/fi';
-import zestfulLogo from '../assets/zestful.svg';
+import zestfulLogo from '../assets/clientnestlogo.jpeg';
 
 const navItems = [
   { name: 'Dashboard', icon: <FiHome />, path: '/dashboard' },
   { name: 'Analytics', icon: <FiGrid />, path: '/dashboard/analytics' },
   { name: 'Kanban', icon: <FiTrello />, path: '/dashboard/kanban' },
+  { name: 'Contacts', icon: <FiUsers />, path: '/contacts' },
   { name: 'Profile', icon: <FiUser />, path: '/dashboard/profile' },
   { name: 'Sign In', icon: <FiLogIn />, path: '/login' },
 ];
@@ -34,7 +35,7 @@ const Sidebar = () => {
         className={`h-screen bg-white border-r border-gray-200 text-gray-800 sticky top-0 shadow-md flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
         onMouseLeave={handleMouseLeave}
     >
-      <div className={`p-4 pb-2 mt-5 flex items-center ${isExpanded ? 'justify-between' : 'justify-center'}`}>
+      <div className={`p-4 pb-2 mt-5 flex items-center ml-16 ${isExpanded ? 'justify-between' : 'justify-center'}`}>
         {isExpanded && (
           <img src={zestfulLogo} alt="Zestful Logo" className="h-8 cursor-pointer" onClick={() => navigate('/dashboard')} />
         )}

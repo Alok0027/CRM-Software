@@ -1,5 +1,5 @@
 import React from 'react';
-import zestful from '../assets/zestful.svg';
+import zestful from '../assets/clientnestlogo.jpeg';
 import './animations.css';
 
 const Preloader = () => {

@@ -107,7 +107,7 @@ function App() {
             element={<DashboardLayout><Dashboard /></DashboardLayout>}
           />
           <Route
-            path="/dashboard/contacts"
+            path="/contacts"
             element={<DashboardLayout><Contacts /></DashboardLayout>}
           />
           <Route
