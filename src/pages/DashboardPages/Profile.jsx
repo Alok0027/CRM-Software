@@ -85,7 +85,7 @@ const Profile = () => {
 
       {/* User Name and Title */}
       <div className="mt-20 ml-6">
-        <h2 className="text-3xl font-bold text-gray-800">Esther Howard</h2>
+        <h2 className="text-3xl font-bold text-gray-800">Alok Mishra </h2>
         <p className="text-gray-500">UI/UX Designer</p>
       </div>
 
