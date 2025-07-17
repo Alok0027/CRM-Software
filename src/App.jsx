@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// Preloader
 import Preloader from './components/Preloader';
 
-// Layouts
 import MainLayout from './layout/MainLayout';
 
-// Main Pages
 import Home from './pages/Home';
 import Login from './pages/Login';
 import BlogPage from './pages/Blog';
@@ -19,12 +16,10 @@ import AboutUs from './pages/Aboutus';
 import SiteContact from './pages/Contact';
 
 
-// Solution Pages
 import SmallBusiness from './pages/Solution/SmallBusiness';
 import MidMarket from './pages/Solution/MidMarket';
 import Enterprises from './pages/Solution/Enterprises';
 
-// Support Pages
 import Help from './pages/Support/Help';
 import SupportContact from './pages/Support/Contact';
 import HelpCenter from './pages/HelpCenter';
@@ -39,7 +34,6 @@ import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 
-// Dashboard (assuming separate layout)
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Dashboard from './pages/Dashboard';
@@ -67,7 +61,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Reduced preloader time
+    }, 1000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -78,7 +72,6 @@ function App() {
         <Preloader />
       ) : (
         <Routes>
-          {/* Main Site Layout */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="solutions/small-business" element={<SmallBusiness />} />
@@ -94,6 +87,7 @@ function App() {
             <Route path="pricing" element={<PricingPage />} />
             <Route path="features" element={<FeaturesPage />} />
             <Route path="about-us" element={<AboutUs />} />
+            <Route path="about" element={<AboutUs />} />
             <Route path="contact" element={<SiteContact />} />
             <Route path="help-center" element={<HelpCenter />} />
             <Route path="help-center/:slug" element={<ArticlePage />} />
@@ -107,9 +101,7 @@ function App() {
             <Route path="reset-password" element={<ResetPassword />} />
           </Route>
 
-          {/* Standalone Pages */}
-
-          {/* Dashboard Layout */}
+          
           <Route
             path="/dashboard"
             element={<DashboardLayout><Dashboard /></DashboardLayout>}

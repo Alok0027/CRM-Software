@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import blog1 from '../assets/blog1.jpeg';
 import blog2 from '../assets/blog2.jpeg';
 import blog3 from '../assets/blog3.jpeg';
@@ -8,7 +7,6 @@ import blog3 from '../assets/blog3.jpeg';
 const Blog = () => {
   return (
     <div>
-      <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-3xl mx-auto">
           <p className="text-gray-500">Blog &gt; Marketing</p>

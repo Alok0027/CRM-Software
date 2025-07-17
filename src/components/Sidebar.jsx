@@ -14,9 +14,9 @@ import zestfulLogo from '../assets/zestful.svg';
 
 const navItems = [
   { name: 'Dashboard', icon: <FiHome />, path: '/dashboard' },
-  { name: 'Analytics', icon: <FiGrid />, path: '/dashboard/analytics', bgColor: 'bg-gray-100' },
+  { name: 'Analytics', icon: <FiGrid />, path: '/dashboard/analytics' },
   { name: 'Kanban', icon: <FiTrello />, path: '/dashboard/kanban' },
-  { name: 'Profile', icon: <FiUser />, path: '/dashboard/profile', bgColor: 'bg-gray-100' },
+  { name: 'Profile', icon: <FiUser />, path: '/dashboard/profile' },
   { name: 'Sign In', icon: <FiLogIn />, path: '/login' },
 ];
 
