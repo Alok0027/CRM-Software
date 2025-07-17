@@ -190,6 +190,62 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Complex Table */}
+        <div className="col-span-6 bg-white p-4 rounded-xl shadow">
+          <h4 className="text-md font-medium mb-4">Complex Table</h4>
+          <table className="w-full text-sm rounded-lg">
+            <thead className="text-left text-gray-500 rounded-lg">
+              <tr>
+                <th className="px-4 py-2">Name</th>
+                <th className="px-4 py-2">Status</th>
+                <th className="px-4 py-2">Date</th>
+                <th className="px-4 py-2">Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Horizon UI PRO", "Approved", "18 Apr 2021"],
+                ["Horizon UI Free", "Disable", "18 Apr 2021"],
+                ["Marketplace", "Error", "20 May 2021"],
+                ["Weekly Update", "Approved", "12 May 2021"],
+              ].map(([name, status, date], idx) => {
+                let statusColor = '';
+                if (status === "Approved") statusColor = 'bg-green-100 text-green-800';
+                else if (status === "Disable") statusColor = 'bg-gray-100 text-gray-600';
+                else if (status === "Error") statusColor = 'bg-red-100 text-red-800';
+                return (
+                  <tr key={idx} className="hover:bg-gray-50 text-sm text-gray-700">
+                    <td className="px-4 py-2">{name}</td>
+                    <td className="px-4 py-2">
+                      <span className="flex items-center gap-2">
+                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-bold text-white rounded-full ${
+  status === "Approved" ? "bg-orange-500" :
+  status === "Disable" ? "bg-red-500" :
+  "bg-yellow-400"
+}`}>
+                          {status === "Approved" && "✔"}
+                          {status === "Disable" && "✖"}
+                          {status === "Error" && "!"}
+                        </span>
+                        <span className="text-sm font-medium text-gray-700">{status}</span>
+                      </span>
+                    </td>
+                    <td className="px-4 py-2">{date}</td>
+                    <td className="px-4 py-2">
+                      <div className="w-full bg-gray-200 h-2 rounded-full">
+                        <div
+                          className="bg-orange-400 h-2 rounded-full"
+                          style={{ width: `${(idx + 1) * 20}%` }}
+                        ></div>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
         {/* Check Table */}
         <div className="col-span-6 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Check Table</h4>
@@ -228,6 +284,21 @@ const Dashboard = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+
+        {/* Calendar */}
+        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
+          <h4 className="text-md font-medium mb-4">April 2021</h4>
+          <div className="grid grid-cols-7 gap-1 text-center text-sm text-gray-600">
+            {["M", "T", "W", "T", "F", "S", "S", ...Array(30).fill(0).map((_, i) => i + 1)].map((d, idx) => (
+              <div
+                key={idx}
+                className={`p-1 rounded-full ${[27, 28, 29, 30].includes(d) ? "bg-orange-300 text-white" : ""}`}
+              >
+                {d}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -312,62 +383,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Complex Table */}
-        <div className="col-span-6 bg-white p-4 rounded-xl shadow">
-          <h4 className="text-md font-medium mb-4">Complex Table</h4>
-          <table className="w-full text-sm rounded-lg">
-            <thead className="text-left text-gray-500 rounded-lg">
-              <tr>
-                <th className="px-4 py-2">Name</th>
-                <th className="px-4 py-2">Status</th>
-                <th className="px-4 py-2">Date</th>
-                <th className="px-4 py-2">Progress</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["Horizon UI PRO", "Approved", "18 Apr 2021"],
-                ["Horizon UI Free", "Disable", "18 Apr 2021"],
-                ["Marketplace", "Error", "20 May 2021"],
-                ["Weekly Update", "Approved", "12 May 2021"],
-              ].map(([name, status, date], idx) => {
-                let statusColor = '';
-                if (status === "Approved") statusColor = 'bg-green-100 text-green-800';
-                else if (status === "Disable") statusColor = 'bg-gray-100 text-gray-600';
-                else if (status === "Error") statusColor = 'bg-red-100 text-red-800';
-                return (
-                  <tr key={idx} className="hover:bg-gray-50 text-sm text-gray-700">
-                    <td className="px-4 py-2">{name}</td>
-                    <td className="px-4 py-2">
-                      <span className="flex items-center gap-2">
-                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-bold text-white rounded-full ${
-  status === "Approved" ? "bg-orange-500" :
-  status === "Disable" ? "bg-red-500" :
-  "bg-yellow-400"
-}`}>
-                          {status === "Approved" && "✔"}
-                          {status === "Disable" && "✖"}
-                          {status === "Error" && "!"}
-                        </span>
-                        <span className="text-sm font-medium text-gray-700">{status}</span>
-                      </span>
-                    </td>
-                    <td className="px-4 py-2">{date}</td>
-                    <td className="px-4 py-2">
-                      <div className="w-full bg-gray-200 h-2 rounded-full">
-                        <div
-                          className="bg-orange-400 h-2 rounded-full"
-                          style={{ width: `${(idx + 1) * 20}%` }}
-                        ></div>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-
         {/* Tasks */}
         <div className="col-span-3 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Tasks</h4>
@@ -384,21 +399,6 @@ const Dashboard = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Calendar */}
-        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
-          <h4 className="text-md font-medium mb-4">April 2021</h4>
-          <div className="grid grid-cols-7 gap-1 text-center text-sm text-gray-600">
-            {["M", "T", "W", "T", "F", "S", "S", ...Array(30).fill(0).map((_, i) => i + 1)].map((d, idx) => (
-              <div
-                key={idx}
-                className={`p-1 rounded-full ${[27, 28, 29, 30].includes(d) ? "bg-orange-300 text-white" : ""}`}
-              >
-                {d}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
