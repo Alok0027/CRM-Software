@@ -8,16 +8,23 @@ import {
   FiLogIn,
   FiGrid,
   FiTrello,
-  FiHelpCircle
+  FiHelpCircle,
+  FiPieChart,
+  FiTrendingUp,
+  FiBarChart2,
+  FiUserPlus
 } from 'react-icons/fi';
 import zestfulLogo from '../assets/clientnestlogo.jpeg';
 
 const navItems = [
   { name: 'Dashboard', icon: <FiHome />, path: '/dashboard' },
-  { name: 'Analytics', icon: <FiGrid />, path: '/dashboard/analytics' },
+  { name: 'Analytics', icon: <FiBarChart2 />, path: '/dashboard/analytics' },
   { name: 'Kanban', icon: <FiTrello />, path: '/dashboard/kanban' },
   { name: 'Contacts', icon: <FiUsers />, path: '/contacts' },
+  { name: 'Leads', icon: <FiUserPlus />, path: '/leads' },
   { name: 'Profile', icon: <FiUser />, path: '/dashboard/profile' },
+  { name: 'Market', icon: <FiPieChart />, path: '/market' },
+  { name: 'Oppotunity', icon: <FiTrendingUp />, path: '/opportunity' },
   { name: 'Sign In', icon: <FiLogIn />, path: '/login' },
 ];
 

@@ -43,7 +43,10 @@ import Setting from './pages/Setting';
 import Marketplace from './pages/DashboardPages/Marketplace';
 import AnalyticsDashboard from './pages/DashboardPages/Tables';
 import Kanban from './pages/DashboardPages/Kanban';
+import Leads from './pages/DashboardPages/Leads';
 import Profile from './pages/DashboardPages/Profile';
+import Market from './pages/DashboardPages/Market';
+import Opportunity from './pages/DashboardPages/Opportunity';
 
 const DashboardLayout = ({ children }) => (
   <div className="flex">
@@ -132,8 +135,20 @@ function App() {
             element={<DashboardLayout><Kanban /></DashboardLayout>}
           />
           <Route
+            path="/leads"
+            element={<DashboardLayout><Leads /></DashboardLayout>}
+          />
+          <Route
             path="/dashboard/profile"
             element={<DashboardLayout><Profile /></DashboardLayout>}
+          />
+          <Route
+            path="/opportunity"
+            element={<DashboardLayout><Opportunity /></DashboardLayout>}
+          />
+          <Route
+            path="/market"
+            element={<DashboardLayout><Market /></DashboardLayout>}
           />
         </Routes>
       )}

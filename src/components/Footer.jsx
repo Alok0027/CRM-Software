@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import zestful from '../assets/zestful.svg';
+import zestful from '../assets/clientnestlogo.jpeg';
 
 const Footer = () => {
   const websiteLinks = {

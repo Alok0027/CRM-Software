@@ -45,9 +45,9 @@ const Why = () => {
           <img src={why2} alt="Zestful Sidebar" className=" h-80 absolute top-96 left-[90%] w-1/3 rounded-lg shadow-lg transform -translate-y-1/2 -translate-x-1/2" />
         </div>
         <div>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose Zestful?</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose ClientNest?</h2>
           <p className="text-gray-600 mb-8">
-            Zestful is your passport to an enriched online journey. Our SaaS Webflow Template offers a range of benefits to help you thrive in the digital realm. Here are some compelling reasons why Zestful is the ideal choice for your web presence:
+            ClientNest is your passport to an enriched online journey. Our SaaS Webflow Template offers a range of benefits to help you thrive in the digital realm. Here are some compelling reasons why Zestful is the ideal choice for your web presence:
           </p>
           <ul className="space-y-6">
             {reasons.map((reason, index) => (
