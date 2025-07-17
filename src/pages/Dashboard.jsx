@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Line,
   Bar,
@@ -30,6 +30,19 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
+  const trafficChartRef = useRef(null);
+  const [gradient, setGradient] = useState(null);
+
+  useEffect(() => {
+    if (trafficChartRef.current) {
+      const ctx = trafficChartRef.current.ctx;
+      const gradientFill = ctx.createLinearGradient(0, 0, 0, 150);
+      gradientFill.addColorStop(0, "#f97316");
+      gradientFill.addColorStop(1, "#ffffff");
+      setGradient(gradientFill);
+    }
+  }, []);
+
   return (
         <div className="bg-gray-100 min-h-screen px-6 py-4 text-gray-800">
       <div className="grid grid-cols-12 gap-6">
@@ -65,7 +78,7 @@ const Dashboard = () => {
             <div className="flex flex-col justify-between h-full">
               <div>
                 <p className="text-md font-medium mb-1">This Month</p>
-                <h3 className="text-2xl font-medium">$37.5K</h3>
+                <h3 className="text-2xl font-medium">₹37.5K</h3>
                 <p className="text-xs text-orange-500">+2.45% • On track</p>
               </div>
             </div>
@@ -78,9 +91,9 @@ const Dashboard = () => {
                       label: 'Revenue',
                       data: [12000, 15000, 14000, 18000, 17500, 20000],
                       borderColor: '#FB923C',
-                      backgroundColor: 'rgba(251, 146, 60, 0.2)',
+                      backgroundColor: 'transparent',
                       tension: 0.4,
-                      fill: true,
+                      fill: false,
                     },
                     {
                       label: 'Projection',
@@ -117,23 +130,40 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Weekly Revenue Bar Chart */}
         <div className="col-span-6 bg-white p-6 rounded-xl shadow h-60">
           <p className="text-md font-medium mb-2 text-orange-500">
             Weekly Revenue
           </p>
-          <div className="mt-4 h-32">
+          <div className="mt-4 h-44">
             <Bar
               data={{
                 labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                  label: 'Weekly Revenue',
-                  data: [1200, 1900, 3000, 2200, 2800, 2400, 3200],
-                  backgroundColor: '#3B82F6',
-                  borderRadius: 6,
-                  barThickness: 'flex',
-                  maxBarThickness: 1000,
-                }]
+                datasets: [
+                  {
+                    label: 'Revenue - Tier 1',
+                    data: [500, 600, 700, 800, 900, 800, 850],
+                    backgroundColor: '#8B5CF6',
+                    barPercentage: 0.3,
+                    categoryPercentage: 0.5,
+                    borderRadius: 8,
+                  },
+                  {
+                    label: 'Revenue - Tier 2',
+                    data: [300, 400, 450, 500, 600, 550, 580],
+                    backgroundColor: '#06B6D4',
+                    barPercentage: 0.3,
+                    categoryPercentage: 0.5,
+                    borderRadius: 8,
+                  },
+                  {
+                    label: 'Revenue - Tier 3',
+                    data: [100, 200, 250, 300, 350, 300, 320],
+                    backgroundColor: '#9CA3AF',
+                    barPercentage: 0.3,
+                    categoryPercentage: 0.5,
+                    borderRadius: 8,
+                  }
+                ]
               }}
               options={{
                 responsive: true,
@@ -143,16 +173,15 @@ const Dashboard = () => {
                 },
                 scales: {
                   x: {
+                    stacked: true,
                     grid: { display: false },
                     ticks: {
                       color: '#9CA3AF',
                       font: { size: 12 }
-                    },
-                    barPercentage: 1,
-                    categoryPercentage: 1,
-                    offset: true,
+                    }
                   },
                   y: {
+                    stacked: true,
                     display: false
                   }
                 }
@@ -165,9 +194,10 @@ const Dashboard = () => {
         <div className="col-span-6 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Check Table</h4>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-gray-200 rounded-lg">
-              <thead className="text-left text-gray-500 bg-gray-50 rounded-lg">
+            <table className="w-full text-sm rounded-lg">
+              <thead className="text-left text-gray-500 rounded-lg">
                 <tr>
+                  <th className="px-4 py-2"></th>
                   <th className="px-4 py-2">Name</th>
                   <th className="px-4 py-2">Progress</th>
                   <th className="px-4 py-2">Quantity</th>
@@ -181,8 +211,11 @@ const Dashboard = () => {
                   ["Weekly Update", "21.3%", "1,024", "5 Jan 2021"],
                   ["Venus 3D Asset", "31.5%", "858", "7 Mar 2021"],
                   ["Marketplace", "12.2%", "258", "17 Dec 2021"],
-                ].map(([name, prog, qty, date]) => (
-                  <tr key={name} className="border-t hover:bg-gray-50 text-sm text-gray-700">
+                ].map(([name, prog, qty, date], idx) => (
+                  <tr key={name} className="hover:bg-gray-50 text-sm text-gray-700">
+                    <td className="px-4 py-2">
+                      <input type="checkbox" className="accent-orange-500 checked:text-white text-white" defaultChecked={idx < 3} />
+                    </td>
                     <td className="px-4 py-2">{name}</td>
                     <td className="px-4 py-2">
                       <span className="inline-block bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded-full">
@@ -203,15 +236,18 @@ const Dashboard = () => {
           <p className="text-md font-medium">Daily Traffic</p>
           <h3 className="text-2xl font-medium">2,579</h3>
           <p className="text-xs text-green-500">+2.45%</p>
-          <div className="mt-4 h-28">
+          <div className="mt-4 h-36">
             <Bar
+              ref={trafficChartRef}
               data={{
                 labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
                 datasets: [{
                   label: 'Traffic',
                   data: [400, 800, 600, 900, 750, 1050, 620],
-                  backgroundColor: '#F97316',
+                  backgroundColor: gradient,
                   borderRadius: 6,
+                  barPercentage: 0.4,
+                  categoryPercentage: 0.6,
                 }]
               }}
               options={{
@@ -279,8 +315,8 @@ const Dashboard = () => {
         {/* Complex Table */}
         <div className="col-span-6 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Complex Table</h4>
-          <table className="w-full text-sm border border-gray-200 rounded-lg">
-            <thead className="text-left text-gray-500 bg-gray-50 rounded-lg">
+          <table className="w-full text-sm rounded-lg">
+            <thead className="text-left text-gray-500 rounded-lg">
               <tr>
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">Status</th>
@@ -300,11 +336,20 @@ const Dashboard = () => {
                 else if (status === "Disable") statusColor = 'bg-gray-100 text-gray-600';
                 else if (status === "Error") statusColor = 'bg-red-100 text-red-800';
                 return (
-                  <tr key={idx} className="border-t hover:bg-gray-50 text-sm text-gray-700">
+                  <tr key={idx} className="hover:bg-gray-50 text-sm text-gray-700">
                     <td className="px-4 py-2">{name}</td>
                     <td className="px-4 py-2">
-                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${statusColor}`}>
-                        {status}
+                      <span className="flex items-center gap-2">
+                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-bold text-white rounded-full ${
+  status === "Approved" ? "bg-orange-500" :
+  status === "Disable" ? "bg-red-500" :
+  "bg-yellow-400"
+}`}>
+                          {status === "Approved" && "✔"}
+                          {status === "Disable" && "✖"}
+                          {status === "Error" && "!"}
+                        </span>
+                        <span className="text-sm font-medium text-gray-700">{status}</span>
                       </span>
                     </td>
                     <td className="px-4 py-2">{date}</td>

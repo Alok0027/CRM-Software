@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import zestful from '../assets/zestful.svg';
+import zestful from '../assets/clientnestlogo.jpeg';
 import { FiChevronDown } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isPagesMenuOpen, setPagesMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm font-['Inter',_sans-serif]">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+    <header className="top-0 z-50 bg-white font-['Inter',_sans-serif]">
+      <div className="container mx-auto px-20 py-8 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/">
             <img src={zestful} alt="Zestful Logo" className="h-8" />
           </Link>
         </div>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8 ml-[30rem]">
           <Link to="/" className="text-gray-800 font-normal hover:text-orange-500 transition-colors">Home</Link>
           <Link to="/features" className="text-gray-800 font-normal hover:text-orange-500 transition-colors">Features</Link>
           <div 
@@ -48,14 +46,15 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-          <Link to="/cart" className="text-gray-800 font-medium hover:text-orange-500 transition-colors flex items-center space-x-2">
-            <span>Cart</span>
-            <span className="bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-          </Link>
+          
         </nav>
 
-        {/* Right Side: Cart & Buttons */}
         <div className="hidden md:flex items-center space-x-6">
+          <Link to="/signup">
+            <button className="bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
+              Register
+            </button>
+          </Link>
           <Link to="/login">
             <button className="bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
               Login
@@ -63,7 +62,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button (placeholder) */}
         <div className="md:hidden">
           <button className="text-gray-800 focus:outline-none">
             <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">

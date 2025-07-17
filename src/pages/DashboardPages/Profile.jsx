@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import alok from "../../assets/newalok.jpeg";
 import { FiCamera, FiEdit2, FiMail, FiPhone, FiMapPin, FiSave, FiBell, FiShield, FiUser } from 'react-icons/fi';
 
 const Profile = () => {
@@ -75,7 +76,7 @@ const Profile = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl"></div>
         <div className="absolute bottom-0 left-6 transform translate-y-1/2">
           <div className="relative">
-            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile" className="w-32 h-32 rounded-full border-4 border-white shadow-lg" />
+            <img src={alok} alt="Profile" className="w-32 h-32 rounded-full border-4 border-white shadow-lg" />
             <button className="absolute bottom-1 right-1 bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
               <FiCamera className="text-gray-600" />
             </button>
@@ -83,13 +84,11 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* User Name and Title */}
       <div className="mt-20 ml-6">
         <h2 className="text-3xl font-bold text-gray-800">Alok Mishra </h2>
         <p className="text-gray-500">UI/UX Designer</p>
       </div>
 
-      {/* Main Content Grid */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-8">
           <UserInfo />
@@ -103,7 +102,6 @@ const Profile = () => {
                 </div>
             </div>
             {activeTab === 'profile' && <ProfileSettings />}
-            {/* Add components for other tabs here */}
         </div>
       </div>
     </div>
