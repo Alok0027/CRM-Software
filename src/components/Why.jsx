@@ -1,6 +1,6 @@
 import React from 'react';
 import why1 from '../assets/why1.png';
-import why2 from '../assets/why2.png';
+import why2 from '../assets/newwhy2.jpg';
 
 const CheckIcon = () => (
   <div className="bg-orange-100 rounded-md p-1 mr-4">
