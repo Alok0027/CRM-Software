@@ -70,7 +70,7 @@ const DashboardLayout = ({ children }) => {
             ? 'ml-0 lg:ml-64' 
             : 'ml-0 lg:ml-20'
         }`}>
-        <Topbar />
+        <Topbar setIsExpanded={setIsSidebarExpanded} />
         <main className="p-3 sm:p-4 lg:p-6">
           {children}
         </main>

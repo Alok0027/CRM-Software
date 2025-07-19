@@ -73,68 +73,68 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
-        {/* Line Chart */}
-        <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-xl shadow">
-          <div className="h-60">
-          <div className="flex justify-between items-center h-full gap-4">
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <p className="text-md font-medium mb-1">This Month</p>
-                <h3 className="text-2xl font-medium">₹37.5K</h3>
-                <p className="text-xs text-orange-500">+2.45% • On track</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
+
+        <div className="lg:col-span-1 xl:col-span-2 bg-white p-4 sm:p-6 rounded-xl shadow h-80">
+          <div className="h-full">
+            <div className="flex justify-between items-center h-full gap-4">
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <p className="text-md font-medium mb-1">This Month</p>
+                  <h3 className="text-2xl font-medium">₹37.5K</h3>
+                  <p className="text-xs text-orange-500">+2.45% • On track</p>
+                </div>
               </div>
-            </div>
-            <div className="flex-1 h-full">
-              <Line
-                data={{
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                  datasets: [
-                    {
-                      label: 'Revenue',
-                      data: [12000, 15000, 14000, 18000, 17500, 20000],
-                      borderColor: '#FB923C',
-                      backgroundColor: 'transparent',
-                      tension: 0.4,
-                      fill: false,
-                    },
-                    {
-                      label: 'Projection',
-                      data: [11000, 14500, 13500, 17000, 16000, 19500],
-                      borderColor: '#F97316',
-                      backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                      borderDash: [5, 5],
-                      tension: 0.4,
-                      fill: false,
-                    }
-                  ]
-                }}
-                options={{
-                  responsive: true,
-                  plugins: {
-                    legend: { display: false },
-                  },
-                  scales: {
-                    x: {
-                      display: true,
-                      grid: { display: false },
-                      ticks: {
-                        color: '#9CA3AF',
-                        font: { size: 12 }
+              <div className="flex-1 h-full">
+                <Line
+                  data={{
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [
+                      {
+                        label: 'Revenue',
+                        data: [12000, 15000, 14000, 18000, 17500, 20000],
+                        borderColor: '#FB923C',
+                        backgroundColor: 'transparent',
+                        tension: 0.4,
+                        fill: false,
+                      },
+                      {
+                        label: 'Projection',
+                        data: [11000, 14500, 13500, 17000, 16000, 19500],
+                        borderColor: '#F97316',
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        fill: false,
                       }
+                    ]
+                  }}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: { display: false },
                     },
-                    y: {
-                      display: false
+                    scales: {
+                      x: {
+                        display: true,
+                        grid: { display: false },
+                        ticks: {
+                          color: '#9CA3AF',
+                          font: { size: 12 }
+                        }
+                      },
+                      y: {
+                        display: false
+                      }
                     }
-                  }
-                }}
-              />
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-        </div>
-
-        <div className="col-span-6 bg-white p-6 rounded-xl shadow h-60">
+        <div className="lg:col-span-1 xl:col-span-2 bg-white p-6 rounded-xl shadow h-80">
           <p className="text-md font-medium mb-2 text-orange-500">
             Weekly Revenue
           </p>
@@ -194,8 +194,8 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Complex Table */}
-        <div className="col-span-6 bg-white p-4 rounded-xl shadow">
+        {/* Row 2: Complex Table & Check Table */}
+        <div className="lg:col-span-2 xl:col-span-2 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Complex Table</h4>
           <table className="w-full text-sm rounded-lg">
             <thead className="text-left text-gray-500 rounded-lg">
@@ -222,11 +222,7 @@ const Dashboard = () => {
                     <td className="px-4 py-2">{name}</td>
                     <td className="px-4 py-2">
                       <span className="flex items-center gap-2">
-                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-medium text-white rounded-full ${
-  status === "Approved" ? "bg-orange-500" :
-  status === "Disable" ? "bg-red-500" :
-  "bg-yellow-400"
-}`}>
+                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-medium text-white rounded-full ${status === "Approved" ? "bg-orange-500" : status === "Disable" ? "bg-red-500" : "bg-yellow-400"}`}>
                           {status === "Approved" && "✔"}
                           {status === "Disable" && "✖"}
                           {status === "Error" && "!"}
@@ -249,9 +245,7 @@ const Dashboard = () => {
             </tbody>
           </table>
         </div>
-
-        {/* Check Table */}
-        <div className="col-span-6 bg-white p-4 rounded-xl shadow">
+        <div className="lg:col-span-2 xl:col-span-2 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Check Table</h4>
           <div className="overflow-x-auto">
             <table className="w-full text-sm rounded-lg">
@@ -291,8 +285,8 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Calendar */}
-        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
+        {/* Row 3: Calendar, Daily Traffic, Pie Chart, Tasks */}
+        <div className="lg:col-span-1 xl:col-span-1 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">April 2021</h4>
           <div className="grid grid-cols-7 gap-1 text-center text-sm text-gray-600">
             {["M", "T", "W", "T", "F", "S", "S", ...Array(30).fill(0).map((_, i) => i + 1)].map((d, idx) => (
@@ -305,9 +299,7 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
-
-        {/* Daily Traffic */}
-        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
+        <div className="lg:col-span-1 xl:col-span-1 bg-white p-4 rounded-xl shadow">
           <p className="text-md font-medium">Daily Traffic</p>
           <h3 className="text-2xl font-medium">2,579</h3>
           <p className="text-xs text-green-500">+2.45%</p>
@@ -353,12 +345,7 @@ const Dashboard = () => {
             />
           </div>
         </div>
-
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-        {/* Pie Chart */}
-        <div className="bg-white p-4 rounded-xl shadow">
+        <div className="lg:col-span-1 xl:col-span-1 bg-white p-4 rounded-xl shadow">
           <p className="text-md font-medium mb-4">Your Pie Chart</p>
           <div className="w-full h-48 flex items-center justify-center">
             <div className="w-40 h-40">
@@ -397,9 +384,7 @@ const Dashboard = () => {
             <span>System 25%</span>
           </div>
         </div>
-
-        {/* Tasks */}
-        <div className="bg-white p-4 rounded-xl shadow">
+        <div className="lg:col-span-1 xl:col-span-1 bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Tasks</h4>
           <ul className="text-sm">
             {[

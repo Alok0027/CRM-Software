@@ -57,14 +57,17 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
 
   return (
     <aside 
-        className={`h-screen bg-white border-r border-gray-200 text-gray-800 fixed top-0 left-0 z-50 flex flex-col transition-transform duration-300 ease-in-out ${isExpanded ? 'w-64 translate-x-0' : 'w-64 -translate-x-full md:w-20 md:translate-x-0'}`}
+        className={`h-screen bg-white border-r border-gray-200 text-gray-800 fixed top-0 left-0 z-50 flex flex-col transition-all duration-300 ease-in-out ${isExpanded ? 'w-64 translate-x-0' : 'w-0 md:w-20'} overflow-hidden`}
     >
-      <div className="p-4 pb-2 flex items-center justify-between">
-        <div className={`flex items-center gap-2 ${isExpanded ? 'md:ml-0' : 'md:ml-1'}`}>
-            <img src={zestfulLogo} alt="Zestful Logo" className={`h-8 cursor-pointer transition-all duration-300 ${isExpanded ? 'w-auto' : 'w-0 md:w-auto'}`} onClick={() => navigate('/dashboard')} />
-        </div>
-        <button onClick={() => setIsExpanded(false)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 md:hidden">
-            <X size={20} />
+      <div className={`p-4 pb-2 flex items-center ${isExpanded ? 'justify-between' : 'justify-center'}`}>
+        <img 
+          src={zestfulLogo} 
+          alt="Zestful Logo" 
+          className={`h-8 cursor-pointer transition-all duration-200 ${isExpanded ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}
+          onClick={() => navigate('/dashboard')} 
+        />
+        <button onClick={() => setIsExpanded(!isExpanded)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
+            {isExpanded ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
       
@@ -84,7 +87,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
                   >
                     <div className="flex items-center">
                       <span className="mr-3 text-lg">{item.icon}</span>
-                      <span className={`font-medium overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
+                      <span className={`font-medium whitespace-nowrap overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
                     </div>
                     <div className={`overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full' : 'w-0'}`}>
                       {expandedItems[item.name] ? <FiChevronDown /> : <FiChevronRight />}
@@ -119,7 +122,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
                   }`}
                 >
                   <span className="mr-3 text-lg">{item.icon}</span>
-                  <span className={`font-medium overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
+                  <span className={`font-medium whitespace-nowrap overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
                 </Link>
               )}
             </li>

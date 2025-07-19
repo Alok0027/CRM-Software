@@ -57,8 +57,9 @@ const Topbar = ({ setIsExpanded }) => {
   }, []);
 
   // Get current path and match to title/breadcrumb
-  const { breadcrumb, title } = pageTitles[location.pathname] || { breadcrumb: "Pages", title: "Dashboard" };
   const location = useLocation();
+  const { breadcrumb, title } = pageTitles[location.pathname] || { breadcrumb: "Pages", title: "Dashboard" };
+
 
   return (
     <div className="w-full px-4 sm:px-6 py-4 bg-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
