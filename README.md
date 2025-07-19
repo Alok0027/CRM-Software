@@ -1,12 +1,66 @@
-# React + Vite
+# 🧠 ClientNest – AI-Enhanced CRM Software
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![GitHub Repo stars](https://img.shields.io/github/stars/Alok0027/CRM-Software?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Alok0027/CRM-Software?style=social)
 
-Currently, two official plugins are available:
+ClientNest is a modern, elegant CRM platform built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**, designed to streamline business workflows through:
+- 🔁 Automation
+- 📊 Advanced Analytics
+- 📇 Contact & Task Management
+- 🎯 Marketing Integration
+- 💡 Smart UI/UX
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<p align="center">
+  <img src="assets/preview.png" alt="ClientNest CRM Preview" width="800"/>
+</p>
+
+---
+
+## 🚀 Tech Stack
+
+- ⚛️ React + Vite
+- 🎨 Tailwind CSS + ShadCN
+- 🧩 Framer Motion
+- 🔐 React Router + Context API
+- 🧠 DnD Kit + Date-fns
+
+---
+
+## 🛠️ Features
+
+- ✅ Dashboard with analytics
+- 👥 Contacts & tasks system
+- ⚙️ Data management & automation
+- 🌙 Light/Dark theme toggle
+- 📈 Customizable charts
+
+---
+
+## 📂 Folder Structure
+src/
+├── assets/
+├── components/
+├── context/
+├── pages/
+└── App.jsx
+---
+
+## 🤝 Contribute
+
+Want to contribute or use it for your team?  
+Feel free to fork, star ⭐, or open issues!
+
+---
+
+## 📬 Contact
+
+Made with ❤️ by [Alok Mishra](https://github.com/Alok0027)
+
+---
+
+## 🌐 Live Demo
+👉 [clientnest.vercel.app](https://clientnestcrm.vercel.app/) <!-- Replace with your URL -->
