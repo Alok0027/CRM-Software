@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './animations.css';
 import crmlogo1 from '../assets/crmlogo1.png';
 import crmlogo2 from '../assets/crmlogo2.png';
@@ -22,6 +24,17 @@ const logos = [
 ];
 
 const Hero = () => {
+  const heroRef = useRef(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+
+    tl.from('.hero-title', { opacity: 0, y: -40, delay: 0.2 })
+      .from('.hero-subtitle', { opacity: 0, y: 30 }, '-=0.7')
+      .from('.logo-carousel', { opacity: 0, y: 30 }, '-=0.7')
+      .from('.hero-image', { opacity: 0, scale: 0.95, y: 40 }, '-=0.7');
+
+  }, { scope: heroRef });
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -41,14 +54,14 @@ const Hero = () => {
     transition: 'transform 0.2s ease-out',
   };
   return (
-    <div className="text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white font-sans mt-16 sm:mt-20">
+    <div ref={heroRef} className="text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white font-sans mt-16 sm:mt-4">
       <div className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-[250px] mb-6 sm:mb-8">
-        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight sm:leading-tight px-2 sm:px-4" style={{ fontFamily: "'Inter', sans-serif, fontWeight: 1000" }}>
+        <h1 className="hero-title absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight sm:leading-tight px-2 sm:px-4" style={{ fontFamily: "'Inter', sans-serif, fontWeight: 1000" }}>
           <span className="text-neutral-700">Unleash the Power of Your</span><br className="hidden sm:block" /><span className="sm:hidden"> </span><span className="text-neutral-700">Business with</span> <span className="text-orange-500">ClientNest</span><span className="text-neutral-700">!</span>
         </h1>
       </div>
       <div className="max-w-4xl mx-auto text-center px-4">
-        <p className="text-base lg:text-lg font-light text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+        <p className="hero-subtitle text-base lg:text-lg font-light text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
           Your gateway to a vibrant online presence. Our SaaS software infuses your website with citrusy energy, ensuring you stand out and captivate your audience. Elevate your digital presence with ClientNest today!
         </p>
       </div>
@@ -61,7 +74,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="mt-8 sm:mt-12 flex justify-center px-4">
-           <img src={heroimg} alt="Dashboard preview" className="w-full sm:w-11/12 lg:w-9/12 max-w-4xl rounded-lg shadow-xl" style={imageStyle} />
+           <img src={heroimg} alt="Dashboard preview" className="hero-image w-full sm:w-11/12 lg:w-9/12 max-w-4xl rounded-lg shadow-xl" style={imageStyle} />
         </div>
       </div>
     </div>
