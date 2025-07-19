@@ -21,10 +21,10 @@ const NFTCard = ({ nft }) => (
   <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out group">
     <img src={nft.image} alt={nft.title} className="w-full h-64 object-cover" />
     <div className="p-5">
-      <h3 className="text-xl font-bold text-gray-800">{nft.title}</h3>
+      <h3 className="text-xl font-medium text-gray-800">{nft.title}</h3>
       <p className="text-sm text-gray-500 mt-1">by {nft.creator}</p>
       <div className="flex justify-between items-center mt-4">
-        <div className="flex items-center text-lg font-bold text-blue-600">
+        <div className="flex items-center text-lg font-medium text-blue-600">
           <FaEthereum className="mr-2" />
           <span>{nft.price} ETH</span>
         </div>
@@ -33,7 +33,7 @@ const NFTCard = ({ nft }) => (
           <span>{nft.likes}</span>
         </div>
       </div>
-      <button className="mt-5 w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors duration-300 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 ease-in-out">
+      <button className="mt-5 w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors duration-300 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 ease-in-out">
         Place a Bid
       </button>
     </div>
@@ -44,13 +44,13 @@ const TopMoverCard = ({ mover }) => (
     <div className="flex items-center bg-white p-4 rounded-xl shadow-md">
         <img src={mover.image} alt={mover.title} className="w-16 h-16 rounded-lg object-cover"/>
         <div className="ml-4 flex-grow">
-            <h4 className="font-bold text-gray-800">{mover.title}</h4>
-            <div className="flex items-center text-sm text-blue-600 font-semibold">
+            <h4 className="font-medium text-gray-800">{mover.title}</h4>
+            <div className="flex items-center text-sm text-blue-600 font-normal">
                 <FaEthereum className="mr-1"/> {mover.price} ETH
             </div>
         </div>
         <div className="text-right">
-            <p className="font-bold text-green-500 text-lg">{mover.change}</p>
+            <p className="font-medium text-green-500 text-lg">{mover.change}</p>
             <p className="text-xs text-gray-400">24h Change</p>
         </div>
     </div>
@@ -68,10 +68,10 @@ const Marketplace = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-4xl font-bold text-gray-800">Discover Digital Art & Collectibles</h1>
+          <h1 className="text-4xl font-medium text-gray-800">Discover Digital Art & Collectibles</h1>
           <p className="text-gray-500 mt-2">Explore, collect, and sell extraordinary NFTs.</p>
         </div>
-        <button className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+        <button className="bg-blue-600 text-white font-normal py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow-md">
           Create
         </button>
       </div>
@@ -107,7 +107,7 @@ const Marketplace = () => {
             {filteredNfts.map(nft => <NFTCard key={nft.id} nft={nft} />)}
           </div>
           <div className="text-center mt-12">
-            <button className="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md hover:bg-gray-100 transition-colors flex items-center mx-auto">
+            <button className="bg-white text-blue-600 font-medium py-3 px-8 rounded-full shadow-md hover:bg-gray-100 transition-colors flex items-center mx-auto">
               <FiRefreshCw className="mr-2 animate-spin"/>
               Load More
             </button>
@@ -117,7 +117,7 @@ const Marketplace = () => {
         {/* Top Movers */}
         <div className="col-span-12 lg:col-span-3">
           <div className="bg-white p-6 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Top Movers</h2>
+            <h2 className="text-2xl font-medium text-gray-800 mb-6">Top Movers</h2>
             <div className="space-y-5">
               {topMovers.map(mover => <TopMoverCard key={mover.id} mover={mover}/>)}
             </div>

@@ -123,7 +123,7 @@ const Automation = () => {
     <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6 mb-8">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-800">Performance Over Time</h2>
+          <h2 className="text-xl font-normal text-gray-800">Performance Over Time</h2>
           <p className="text-gray-600">Email opens, clicks, and conversions</p>
         </div>
         <div className="flex gap-2">
@@ -170,7 +170,7 @@ const Automation = () => {
 
   const TopWorkflowsPanel = () => (
     <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <h3 className="text-lg font-normal text-gray-800 mb-4 flex items-center gap-2">
         <FiTrendingUp className="text-orange-600" />
         Top Performing Workflows
       </h3>
@@ -178,7 +178,7 @@ const Automation = () => {
         {topWorkflows.map((workflow, index) => (
           <div key={workflow.id} className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
             <div className="flex items-center gap-3">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-medium ${
                 index === 0 ? 'bg-yellow-500' : index === 1 ? 'bg-gray-400' : 'bg-orange-600'
               }`}>
                 {index + 1}
@@ -189,7 +189,7 @@ const Automation = () => {
               </div>
             </div>
             <div className="text-right">
-              <p className="font-semibold text-orange-600">{workflow.conversion}</p>
+              <p className="font-normal text-orange-600">{workflow.conversion}</p>
               <p className="text-xs text-gray-500">conversion</p>
             </div>
           </div>
@@ -200,7 +200,7 @@ const Automation = () => {
 
   const ActivityFeed = () => (
     <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <h3 className="text-lg font-normal text-gray-800 mb-4 flex items-center gap-2">
         <FiActivity className="text-orange-600" />
         Recent Activity
       </h3>
@@ -232,7 +232,7 @@ const Automation = () => {
 
   const SmartSuggestions = () => (
     <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg border border-orange-200 p-6 mb-8">
-      <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+      <h3 className="text-lg font-normal text-gray-800 mb-3 flex items-center gap-2">
         💡 Smart Suggestions
       </h3>
       <div className="space-y-3">
@@ -254,7 +254,7 @@ const Automation = () => {
     <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6 hover:shadow-lg transition-shadow">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-1">{workflow.name}</h3>
+          <h3 className="text-lg font-normal text-gray-800 mb-1">{workflow.name}</h3>
           <p className="text-sm text-gray-600">{workflow.description}</p>
         </div>
         <div className="flex items-center gap-2">
@@ -283,19 +283,19 @@ const Automation = () => {
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
         <div className="text-center">
-          <div className="text-lg font-semibold text-orange-600">{workflow.contacts}</div>
+          <div className="text-lg font-normal text-orange-600">{workflow.contacts}</div>
           <div className="text-xs text-gray-500">Contacts</div>
         </div>
         <div className="text-center">
-          <div className="text-lg font-semibold text-orange-600">{workflow.conversion}</div>
+          <div className="text-lg font-normal text-orange-600">{workflow.conversion}</div>
           <div className="text-xs text-gray-500">Conversion</div>
         </div>
         <div className="text-center">
-          <div className="text-lg font-semibold text-orange-600">{workflow.steps}</div>
+          <div className="text-lg font-normal text-orange-600">{workflow.steps}</div>
           <div className="text-xs text-gray-500">Steps</div>
         </div>
         <div className="text-center">
-          <div className="text-lg font-semibold text-orange-600">{workflow.completionRate}</div>
+          <div className="text-lg font-normal text-orange-600">{workflow.completionRate}</div>
           <div className="text-xs text-gray-500">Completion</div>
         </div>
       </div>
@@ -306,23 +306,23 @@ const Automation = () => {
           <h4 className="font-medium text-gray-800 mb-3">Performance Breakdown</h4>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
             <div className="text-center">
-              <div className="font-semibold text-blue-600">{workflow.openRate}</div>
+              <div className="font-normal text-blue-600">{workflow.openRate}</div>
               <div className="text-xs text-gray-500">Open Rate</div>
             </div>
             <div className="text-center">
-              <div className="font-semibold text-green-600">{workflow.clickRate}</div>
+              <div className="font-normal text-green-600">{workflow.clickRate}</div>
               <div className="text-xs text-gray-500">Click Rate</div>
             </div>
             <div className="text-center">
-              <div className="font-semibold text-red-600">{workflow.bounceRate}</div>
+              <div className="font-normal text-red-600">{workflow.bounceRate}</div>
               <div className="text-xs text-gray-500">Bounce Rate</div>
             </div>
             <div className="text-center">
-              <div className="font-semibold text-yellow-600">{workflow.unsubscribeRate}</div>
+              <div className="font-normal text-yellow-600">{workflow.unsubscribeRate}</div>
               <div className="text-xs text-gray-500">Unsubscribe</div>
             </div>
             <div className="text-center">
-              <div className="font-semibold text-purple-600">{workflow.lastActivity}</div>
+              <div className="font-normal text-purple-600">{workflow.lastActivity}</div>
               <div className="text-xs text-gray-500">Last Activity</div>
             </div>
           </div>
@@ -371,7 +371,7 @@ const Automation = () => {
     <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-800">{workflow.name}</h2>
+          <h2 className="text-xl font-normal text-gray-800">{workflow.name}</h2>
           <p className="text-gray-600">Workflow Builder</p>
         </div>
         <div className="flex gap-2">
@@ -464,7 +464,7 @@ const Automation = () => {
       <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4">
         <div className="p-6 border-b border-gray-200">
           <div className="flex justify-between items-center">
-            <h2 className="text-xl font-semibold text-gray-800">Create New Workflow</h2>
+            <h2 className="text-xl font-normal text-gray-800">Create New Workflow</h2>
             <button onClick={() => setShowCreateModal(false)} className="text-gray-500 hover:text-gray-700">
               ✕
             </button>
@@ -525,7 +525,7 @@ const Automation = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Marketing Automation</h1>
+            <h1 className="text-3xl font-medium text-gray-800 mb-2">Marketing Automation</h1>
             <p className="text-gray-600">Create and manage automated workflows to nurture leads and engage customers</p>
           </div>
           <button 
@@ -543,7 +543,7 @@ const Automation = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Active Workflows</p>
-                <p className="text-2xl font-bold text-orange-600">12</p>
+                <p className="text-2xl font-medium text-orange-600">12</p>
               </div>
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                 <FiZap className="w-6 h-6 text-orange-600" />
@@ -555,7 +555,7 @@ const Automation = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Contacts Enrolled</p>
-                <p className="text-2xl font-bold text-orange-600">2,341</p>
+                <p className="text-2xl font-medium text-orange-600">2,341</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <FiUsers className="w-6 h-6 text-blue-600" />
@@ -567,7 +567,7 @@ const Automation = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Emails Sent</p>
-                <p className="text-2xl font-bold text-orange-600">8,947</p>
+                <p className="text-2xl font-medium text-orange-600">8,947</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <FiMail className="w-6 h-6 text-green-600" />
@@ -579,7 +579,7 @@ const Automation = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Conversion Rate</p>
-                <p className="text-2xl font-bold text-orange-600">34.2%</p>
+                <p className="text-2xl font-medium text-orange-600">34.2%</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
                 <FiTarget className="w-6 h-6 text-purple-600" />
@@ -691,7 +691,7 @@ const Automation = () => {
           <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6">
             <div className="flex justify-between items-center mb-6">
               <div>
-                <h2 className="text-xl font-semibold text-gray-800">Template Library</h2>
+                <h2 className="text-xl font-normal text-gray-800">Template Library</h2>
                 <p className="text-gray-600">Reusable templates for your automation workflows</p>
               </div>
               <button className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">

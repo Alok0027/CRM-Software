@@ -34,7 +34,7 @@ const ApiReference = () => {
             <h2 className="text-3xl font-medium text-gray-800 mb-6">Endpoints</h2>
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-green-600">GET /api/contacts</h3>
+                <h3 className="text-xl font-normal mb-3 text-green-600">GET /api/contacts</h3>
                 <p className="text-gray-600 mb-3">Retrieve all contacts</p>
                 <div className="bg-gray-100 p-3 rounded">
                   <code className="text-sm">curl -H "Authorization: Bearer YOUR_API_KEY" https://api.yourcrm.com/contacts</code>
@@ -42,7 +42,7 @@ const ApiReference = () => {
               </div>
 
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-blue-600">POST /api/contacts</h3>
+                <h3 className="text-xl font-normal mb-3 text-blue-600">POST /api/contacts</h3>
                 <p className="text-gray-600 mb-3">Create a new contact</p>
                 <div className="bg-gray-100 p-3 rounded">
                   <code className="text-sm">{`curl -X POST -H "Authorization: Bearer YOUR_API_KEY" -d '{"name":"John Doe","email":"john@example.com"}' https://api.yourcrm.com/contacts`}</code>
@@ -50,7 +50,7 @@ const ApiReference = () => {
               </div>
 
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-green-600">GET /api/deals</h3>
+                <h3 className="text-xl font-normal mb-3 text-green-600">GET /api/deals</h3>
                 <p className="text-gray-600 mb-3">Retrieve all deals</p>
                 <div className="bg-gray-100 p-3 rounded">
                   <code className="text-sm">curl -H "Authorization: Bearer YOUR_API_KEY" https://api.yourcrm.com/deals</code>
@@ -58,7 +58,7 @@ const ApiReference = () => {
               </div>
 
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-orange-600">PUT /api/deals/:id</h3>
+                <h3 className="text-xl font-normal mb-3 text-orange-600">PUT /api/deals/:id</h3>
                 <p className="text-gray-600 mb-3">Update a deal</p>
                 <div className="bg-gray-100 p-3 rounded">
                   <code className="text-sm">{`curl -X PUT -H "Authorization: Bearer YOUR_API_KEY" -d '{"status":"closed"}' https://api.yourcrm.com/deals/123`}</code>

@@ -55,12 +55,12 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/signup">
-            <button className="bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
+            <button className="bg-orange-500 text-white font-normal py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
               Register
             </button>
           </Link>
           <Link to="/login">
-            <button className="bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
+            <button className="bg-gray-800 text-white font-normal py-3 px-6 rounded-lg hover:bg-gray-900 transition-all shadow">
               Login
             </button>
           </Link>

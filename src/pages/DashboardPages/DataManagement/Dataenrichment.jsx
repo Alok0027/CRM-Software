@@ -138,7 +138,7 @@ const DataEnrichment = () => {
             {source.icon}
           </div>
           <div>
-            <h3 className="font-semibold text-gray-800">{source.name}</h3>
+            <h3 className="font-normal text-gray-800">{source.name}</h3>
             <p className="text-sm text-gray-600">{source.type}</p>
           </div>
         </div>
@@ -225,7 +225,7 @@ const DataEnrichment = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Records Enriched</p>
-                <p className="text-2xl font-bold text-orange-600">3,660</p>
+                <p className="text-2xl font-medium text-orange-600">3,660</p>
               </div>
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                 <FiTrendingUp className="w-6 h-6 text-orange-600" />
@@ -237,7 +237,7 @@ const DataEnrichment = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Success Rate</p>
-                <p className="text-2xl font-bold text-orange-600">84.3%</p>
+                <p className="text-2xl font-medium text-orange-600">84.3%</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <FiCheck className="w-6 h-6 text-green-600" />
@@ -249,7 +249,7 @@ const DataEnrichment = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Credits Used</p>
-                <p className="text-2xl font-bold text-orange-600">3,660</p>
+                <p className="text-2xl font-medium text-orange-600">3,660</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <FiDollarSign className="w-6 h-6 text-blue-600" />
@@ -261,7 +261,7 @@ const DataEnrichment = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Active Sources</p>
-                <p className="text-2xl font-bold text-orange-600">{enrichmentSources.filter(s => s.status === 'active').length}</p>
+                <p className="text-2xl font-medium text-orange-600">{enrichmentSources.filter(s => s.status === 'active').length}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
                 <FiZap className="w-6 h-6 text-purple-600" />
@@ -272,7 +272,7 @@ const DataEnrichment = () => {
 
         {/* Smart Suggestions */}
         <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg border border-orange-200 p-6 mb-8">
-          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+          <h3 className="text-lg font-normal text-gray-800 mb-3 flex items-center gap-2">
             💡 Smart Suggestions
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -298,7 +298,7 @@ const DataEnrichment = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Enrichment Sources */}
           <div className="lg:col-span-2">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Enrichment Sources</h2>
+            <h2 className="text-xl font-normal text-gray-800 mb-4">Enrichment Sources</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {enrichmentSources.map(source => (
                 <EnrichmentSourceCard key={source.id} source={source} />
@@ -308,7 +308,7 @@ const DataEnrichment = () => {
           
           {/* Enrichment Logs */}
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Recent Activity</h2>
+            <h2 className="text-xl font-normal text-gray-800 mb-4">Recent Activity</h2>
             <div className="bg-white rounded-lg shadow-md border border-orange-100 p-6">
               <div className="space-y-4 max-h-96 overflow-y-auto">
                 {enrichmentLogs.map((log) => (
@@ -339,7 +339,7 @@ const DataEnrichment = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-lg">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-800">Enrichment Source Details</h2>
+              <h2 className="text-xl font-normal text-gray-800">Enrichment Source Details</h2>
               <button 
                 onClick={() => setShowDetailsModal(false)}
                 className="p-2 hover:bg-gray-100 rounded-lg"
@@ -353,7 +353,7 @@ const DataEnrichment = () => {
                   {selectedEnrichmentSource.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-800">{selectedEnrichmentSource.name}</h3>
+                  <h3 className="font-normal text-gray-800">{selectedEnrichmentSource.name}</h3>
                   <p className="text-sm text-gray-600">{selectedEnrichmentSource.type}</p>
                 </div>
               </div>
@@ -409,7 +409,7 @@ const DataEnrichment = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-800">Enrichment Rules</h2>
+              <h2 className="text-xl font-normal text-gray-800">Enrichment Rules</h2>
               <button 
                 onClick={() => setShowRulesModal(false)}
                 className="p-2 hover:bg-gray-100 rounded-lg"

@@ -129,12 +129,12 @@ const BlogOverviewPage = () => {
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
-                  <span className="font-semibold text-orange-500">{post.category}</span>
+                  <span className="font-normal text-orange-500">{post.category}</span>
                   <span>{post.date} &middot; {post.readTime}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 h-16">{post.title}</h3>
+                <h3 className="text-xl font-normal mb-2 h-16">{post.title}</h3>
                 <p className="text-gray-600 mb-4 h-24 overflow-hidden">{post.description}</p>
-                <Link to={post.path} className="text-orange-500 font-semibold hover:underline">Read More &rarr;</Link>
+                <Link to={post.path} className="text-orange-500 font-normal hover:underline">Read More &rarr;</Link>
               </div>
             </div>
           ))}

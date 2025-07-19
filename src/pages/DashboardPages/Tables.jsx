@@ -110,7 +110,7 @@ const taskCompletionChart = {
 // --- Reusable Chart Card Component ---
 const ChartCard = ({ title, children }) => (
   <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200/80">
-    <h3 className="text-lg font-semibold text-gray-700 mb-4">{title}</h3>
+    <h3 className="text-lg font-normal text-gray-700 mb-4">{title}</h3>
     <div className="h-80">{children}</div>
   </div>
 );
@@ -155,7 +155,7 @@ const AnalyticsDashboard = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-800 mb-2">Sales Analytics Dashboard</h1>
+      <h1 className="text-3xl font-medium text-gray-800 mb-2">Sales Analytics Dashboard</h1>
       <p className="text-gray-600 mb-8">An overview of your company's sales performance and activities.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <ChartCard title="Quarterly Sales Performance">

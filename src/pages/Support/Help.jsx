@@ -9,7 +9,7 @@ const CategoryCard = ({ icon, title, description, link }) => (
     </div>
     <h3 className="text-xl font-medium text-gray-800 mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
-    <div className="mt-4 inline-flex items-center font-semibold text-orange-600 hover:text-orange-800">
+    <div className="mt-4 inline-flex items-center font-normal text-orange-600 hover:text-orange-800">
       Learn More <ArrowRight className="ml-1 h-4 w-4" />
     </div>
   </Link>
@@ -50,7 +50,7 @@ const HelpCenter = () => {
 
       <div className="bg-white text-black">
         <div className="container mx-auto px-6 py-24 text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">How can we help you?</h1>
+          <h1 className="text-4xl md:text-5xl font-normal leading-tight">How can we help you?</h1>
           <p className="mt-4 text-lg md:text-xl text-black max-w-2xl mx-auto">Search our knowledge base for articles, guides, and answers.</p>
           <div className="mt-8 max-w-2xl mx-auto">
             <form onSubmit={handleSearch} className="relative">
@@ -62,7 +62,7 @@ const HelpCenter = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
-              <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">Search</button>
+              <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-600 text-white px-6 py-2 rounded-full font-normal hover:bg-orange-700 transition-colors">Search</button>
             </form>
           </div>
         </div>
@@ -78,7 +78,7 @@ const HelpCenter = () => {
               <div className="space-y-6">
                 {results.map((result) => (
                   <Link to={result.link} key={result.id} className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
-                    <h3 className="text-xl font-semibold text-orange-600">{result.title}</h3>
+                    <h3 className="text-xl font-normal text-orange-600">{result.title}</h3>
                     <p className="mt-2 text-gray-600">{result.description}</p>
                   </Link>
                 ))}

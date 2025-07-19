@@ -33,25 +33,25 @@ const Documentation = () => {
             <h2 className="text-3xl font-medium text-gray-800 mb-6">Core Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Contact Management</h3>
+                <h3 className="text-xl font-normal mb-3">Contact Management</h3>
                 <p className="text-gray-600">
                   Organize and manage all your customer information in one centralized location.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Lead Tracking</h3>
+                <h3 className="text-xl font-normal mb-3">Lead Tracking</h3>
                 <p className="text-gray-600">
                   Track leads through your sales pipeline and convert them into customers.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Deal Management</h3>
+                <h3 className="text-xl font-normal mb-3">Deal Management</h3>
                 <p className="text-gray-600">
                   Manage opportunities and deals with comprehensive tracking and reporting.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Automation</h3>
+                <h3 className="text-xl font-normal mb-3">Automation</h3>
                 <p className="text-gray-600">
                   Automate repetitive tasks and workflows to increase efficiency.
                 </p>

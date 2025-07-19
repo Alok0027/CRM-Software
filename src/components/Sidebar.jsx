@@ -40,10 +40,10 @@ const navItems = [
   { name: 'Sign Out', icon: <FiLogIn />, path: '/' },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ isExpanded, setIsExpanded }) => {
   const location = useLocation();
   const [expandedItems, setExpandedItems] = useState({});
-  const [isExpanded, setIsExpanded] = useState(false);
+
   const navigate = useNavigate();
 
   const toggleExpanded = (itemName) => {
@@ -59,7 +59,7 @@ const Sidebar = () => {
 
   return (
     <aside 
-        className={`h-screen bg-white border-r border-gray-200 text-gray-800 sticky top-0 shadow-md flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
+        className={`h-screen bg-white border-r border-gray-200 text-gray-800 fixed top-0 left-0 z-50 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
         onMouseLeave={handleMouseLeave}
     >
       <div className={`p-4 pb-2 mt-5 flex items-center ml-16 ${isExpanded ? 'justify-between' : 'justify-center'}`}>
@@ -144,9 +144,9 @@ const Sidebar = () => {
             <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-white/20 rounded-full"></div>
             <div className="relative z-10">
               <FiHelpCircle className="mx-auto text-3xl mb-3"/>
-              <h3 className="font-bold text-lg">Upgrade to PRO</h3>
+              <h3 className="font-medium text-lg">Upgrade to PRO</h3>
               <p className="text-xs mt-1 mb-4">Get access to all features! Connect with Venus World!</p>
-              <button className="bg-white text-orange-500 font-bold py-2 px-4 rounded-lg w-full hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-orange-500 font-medium py-2 px-4 rounded-lg w-full hover:bg-gray-100 transition-colors">
                 Get Started
               </button>
             </div>

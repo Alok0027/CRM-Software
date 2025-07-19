@@ -22,7 +22,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center p-5 border-b border-gray-200">
-              <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+              <h3 className="text-xl font-normal text-gray-800">{title}</h3>
               <button 
                 onClick={onClose} 
                 className="p-2 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"

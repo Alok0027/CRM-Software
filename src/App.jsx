@@ -58,15 +58,22 @@ import DataEnrichment from './pages/DashboardPages/DataManagement/Dataenrichment
 import DataSets from './pages/DashboardPages/DataManagement/DataSets';
 import Task from './pages/DashboardPages/Task';
 
-const DashboardLayout = ({ children }) => (
-  <div className="flex">
-    <Sidebar />
-    <div className="flex-1">
-      <Topbar />
-      {children}
+const DashboardLayout = ({ children }) => {
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
+
+  return (
+    <div className="relative min-h-screen bg-gray-100">
+      <Sidebar isExpanded={isSidebarExpanded} setIsExpanded={setIsSidebarExpanded} />
+      <div
+        className={`transition-all duration-300 ease-in-out ${isSidebarExpanded ? 'ml-64' : 'ml-20'}`}>
+        <Topbar />
+        <main className="p-6">
+          {children}
+        </main>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 function App() {
   const [loading, setLoading] = useState(true);

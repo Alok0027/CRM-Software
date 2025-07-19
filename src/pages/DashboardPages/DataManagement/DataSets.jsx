@@ -132,7 +132,7 @@ const DataSets = () => {
             <FiBarChart2 className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-semibold text-gray-800 flex items-center gap-2">
+            <h3 className="font-normal text-gray-800 flex items-center gap-2">
               {dataSet.name}
               <span className={`px-2 py-1 rounded text-xs font-medium ${
                 dataSet.type === 'live' 
@@ -250,7 +250,7 @@ const DataSets = () => {
         <div className="p-6 border-b border-gray-200">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-xl font-semibold text-gray-800">Create New Dataset</h2>
+              <h2 className="text-xl font-normal text-gray-800">Create New Dataset</h2>
               <p className="text-gray-600">Build filtered collections of records for analytics or workflows</p>
             </div>
             <button onClick={() => setShowCreateModal(false)} className="text-gray-500 hover:text-gray-700">
@@ -347,7 +347,7 @@ const DataSets = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Data Sets</h1>
+            <h1 className="text-3xl font-medium text-gray-800 mb-2">Data Sets</h1>
             <p className="text-gray-600">Build, filter, and manage collections of records for analytics or workflows</p>
           </div>
           <button 
@@ -365,7 +365,7 @@ const DataSets = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Total Datasets</p>
-                <p className="text-2xl font-bold text-orange-600">{dataSets.length}</p>
+                <p className="text-2xl font-medium text-orange-600">{dataSets.length}</p>
               </div>
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                 <FiBarChart2 className="w-6 h-6 text-orange-600" />
@@ -377,7 +377,7 @@ const DataSets = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Live Datasets</p>
-                <p className="text-2xl font-bold text-orange-600">{dataSets.filter(d => d.type === 'live').length}</p>
+                <p className="text-2xl font-medium text-orange-600">{dataSets.filter(d => d.type === 'live').length}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <FiRefreshCw className="w-6 h-6 text-green-600" />
@@ -389,7 +389,7 @@ const DataSets = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Total Records</p>
-                <p className="text-2xl font-bold text-orange-600">{dataSets.reduce((sum, d) => sum + d.recordCount, 0).toLocaleString()}</p>
+                <p className="text-2xl font-medium text-orange-600">{dataSets.reduce((sum, d) => sum + d.recordCount, 0).toLocaleString()}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <FiUsers className="w-6 h-6 text-blue-600" />
@@ -401,7 +401,7 @@ const DataSets = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Avg Records/Set</p>
-                <p className="text-2xl font-bold text-orange-600">{Math.round(dataSets.reduce((sum, d) => sum + d.recordCount, 0) / dataSets.length)}</p>
+                <p className="text-2xl font-medium text-orange-600">{Math.round(dataSets.reduce((sum, d) => sum + d.recordCount, 0) / dataSets.length)}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
                 <FiGrid className="w-6 h-6 text-purple-600" />
@@ -461,7 +461,7 @@ const DataSets = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-800">Dataset Details</h2>
+              <h2 className="text-xl font-normal text-gray-800">Dataset Details</h2>
               <button 
                 onClick={() => setShowDetailsModal(false)}
                 className="p-2 hover:bg-gray-100 rounded-lg"
@@ -475,7 +475,7 @@ const DataSets = () => {
                   <FiBarChart2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-800">{selectedDataSet.name}</h3>
+                  <h3 className="font-normal text-gray-800">{selectedDataSet.name}</h3>
                   <p className="text-sm text-gray-600">{selectedDataSet.description}</p>
                 </div>
               </div>

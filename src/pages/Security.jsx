@@ -45,7 +45,7 @@ const Security = () => {
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="bg-gray-50 p-6 rounded-lg">
                   <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                  <h3 className="text-xl font-normal mb-3">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               ))}
@@ -61,15 +61,15 @@ const Security = () => {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                 <div className="text-center p-6 border border-gray-200 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2">GDPR</h3>
+                  <h3 className="text-lg font-normal mb-2">GDPR</h3>
                   <p className="text-sm text-gray-600">General Data Protection Regulation compliant</p>
                 </div>
                 <div className="text-center p-6 border border-gray-200 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2">SOC 2</h3>
+                  <h3 className="text-lg font-normal mb-2">SOC 2</h3>
                   <p className="text-sm text-gray-600">Type II compliance certified</p>
                 </div>
                 <div className="text-center p-6 border border-gray-200 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2">ISO 27001</h3>
+                  <h3 className="text-lg font-normal mb-2">ISO 27001</h3>
                   <p className="text-sm text-gray-600">Information security management</p>
                 </div>
               </div>

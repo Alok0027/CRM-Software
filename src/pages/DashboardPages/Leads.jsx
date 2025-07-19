@@ -125,12 +125,12 @@ const Leads = () => {
     <main className="p-4 sm:p-6 lg:p-8 bg-gray-100 min-h-screen font-sans">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Leads</h1>
+          <h1 className="text-3xl font-medium text-gray-900">Leads</h1>
           <p className="mt-1 text-gray-500">Track and manage potential customers.</p>
         </div>
         <button 
           onClick={() => handleOpenModal()}
-          className="flex items-center gap-2 px-6 py-3 mt-4 sm:mt-0 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
+          className="flex items-center gap-2 px-6 py-3 mt-4 sm:mt-0 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
         >
           <FiPlus size={20} />
           <span>Add New Lead</span>
@@ -170,12 +170,12 @@ const Leads = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="h-11 w-11 flex-shrink-0">
-                          <div className="h-11 w-11 rounded-full bg-orange-100 flex items-center justify-center font-bold text-orange-600 border-2 border-white shadow-sm">
+                          <div className="h-11 w-11 rounded-full bg-orange-100 flex items-center justify-center font-medium text-orange-600 border-2 border-white shadow-sm">
                             {lead.name.charAt(0)}
                           </div>
                         </div>
                         <div className="ml-4">
-                                                    <div className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">{lead.name}</div>
+                                                    <div className="font-normal text-gray-900 group-hover:text-orange-600 transition-colors">{lead.name}</div>
                         </div>
                       </div>
                     </td>
@@ -185,7 +185,7 @@ const Leads = () => {
                     </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-gray-700">{lead.source}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`text-xs px-3 py-1.5 rounded-full font-bold border ${statusColors[lead.status]}`}>
+                      <span className={`text-xs px-3 py-1.5 rounded-full font-medium border ${statusColors[lead.status]}`}>
                         {lead.status}
                       </span>
                     </td>

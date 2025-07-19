@@ -46,8 +46,8 @@ const SystemStatus = () => {
                       {metric.status.toUpperCase()}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{metric.name}</h3>
-                  <p className="text-2xl font-bold text-gray-900">{metric.value}</p>
+                  <h3 className="text-lg font-normal text-gray-800 mb-2">{metric.name}</h3>
+                  <p className="text-2xl font-medium text-gray-900">{metric.value}</p>
                 </div>
               ))}
             </div>
@@ -58,18 +58,18 @@ const SystemStatus = () => {
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Response Time</h3>
-                  <p className="text-3xl font-bold text-green-600">120ms</p>
+                  <h3 className="text-lg font-normal text-gray-800 mb-2">Response Time</h3>
+                  <p className="text-3xl font-medium text-green-600">120ms</p>
                   <p className="text-sm text-gray-600">Average response time</p>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Uptime</h3>
-                  <p className="text-3xl font-bold text-green-600">99.9%</p>
+                  <h3 className="text-lg font-normal text-gray-800 mb-2">Uptime</h3>
+                  <p className="text-3xl font-medium text-green-600">99.9%</p>
                   <p className="text-sm text-gray-600">Last 30 days</p>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Active Users</h3>
-                  <p className="text-3xl font-bold text-blue-600">1,247</p>
+                  <h3 className="text-lg font-normal text-gray-800 mb-2">Active Users</h3>
+                  <p className="text-3xl font-medium text-blue-600">1,247</p>
                   <p className="text-sm text-gray-600">Currently online</p>
                 </div>
               </div>

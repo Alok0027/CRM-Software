@@ -55,8 +55,8 @@ const LeadForm = ({ onSubmit, lead, onCancel }) => {
         </select>
       </div>
       <div className="flex justify-end gap-4 pt-4">
-        <button type="button" onClick={onCancel} className="px-8 py-2.5 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 font-bold transition-all duration-200">Cancel</button>
-        <button type="submit" className="px-8 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg font-bold transition-all duration-200 shadow-md">{lead ? 'Update Lead' : 'Add Lead'}</button>
+        <button type="button" onClick={onCancel} className="px-8 py-2.5 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 font-medium transition-all duration-200">Cancel</button>
+        <button type="submit" className="px-8 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg font-medium transition-all duration-200 shadow-md">{lead ? 'Update Lead' : 'Add Lead'}</button>
       </div>
     </form>
   );

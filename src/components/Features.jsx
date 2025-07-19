@@ -28,7 +28,7 @@ const Features = () => {
                 <div className="bg-white p-4 rounded-lg">
                   <img src={feature.icon} alt={feature.title} className="h-12 w-12" />
                 </div>
-                <h3 className="font-semibold text-2xl text-white">{feature.title}</h3>
+                <h3 className="font-normal text-2xl text-white">{feature.title}</h3>
               </div>
             ))}
           </div>

@@ -49,23 +49,23 @@ const Contact = () => {
 
       <section className="bg-orange-500 py-20 px-4">
         <div className="max-w-6xl mx-auto text-center text-white">
-          <h2 className="text-5xl font-bold mb-4">Reach out directly</h2>
+          <h2 className="text-5xl font-medium mb-4">Reach out directly</h2>
           <p className="max-w-3xl mx-auto mb-12">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-orange-400/50 p-8 rounded-lg text-left">
               <MessageSquare className="w-10 h-10 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Help & Support</h3>
+              <h3 className="text-2xl font-medium mb-3">Help & Support</h3>
               <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
-              <a href="mailto:support@flowuniversity.com" className="font-semibold hover:underline">support@flowuniversity.com</a>
+              <a href="mailto:support@flowuniversity.com" className="font-normal hover:underline">support@flowuniversity.com</a>
               <p className="mt-2">+1 23 45 678</p>
             </div>
             <div className="bg-orange-400/50 p-8 rounded-lg text-left">
               <HelpCircle className="w-10 h-10 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">FAQ & Help Center</h3>
+              <h3 className="text-2xl font-medium mb-3">FAQ & Help Center</h3>
               <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
-              <a href="#" className="font-semibold hover:underline">Visit the Help Center</a>
+              <a href="#" className="font-normal hover:underline">Visit the Help Center</a>
             </div>
           </div>
         </div>
@@ -76,14 +76,14 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-xl p-12">
           <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
             <div className="md:w-2/3">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Let's get started today!</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Create your Account Now.</h3>
+              <h2 className="text-3xl md:text-4xl font-medium text-gray-800">Let's get started today!</h2>
+              <h3 className="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Create your Account Now.</h3>
               <p className="text-gray-600">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
               </p>
             </div>
             <div className="w-full md:w-auto flex justify-center md:justify-end mt-6 md:mt-0">
-              <a href="#" className="bg-orange-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-orange-600 transition-all shadow-md text-center whitespace-nowrap transform hover:scale-95">
+              <a href="#" className="bg-orange-500 text-white font-normal py-4 px-8 rounded-lg hover:bg-orange-600 transition-all shadow-md text-center whitespace-nowrap transform hover:scale-95">
                 Get Started - Create your Account for Free!
               </a>
             </div>

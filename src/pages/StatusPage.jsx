@@ -55,7 +55,7 @@ const StatusPage = () => {
               <div className="flex items-center">
                 <FiCheckCircle className="text-green-500 text-2xl mr-3" />
                 <div>
-                  <h2 className="text-xl font-semibold text-green-800">All Systems Operational</h2>
+                  <h2 className="text-xl font-normal text-green-800">All Systems Operational</h2>
                   <p className="text-green-600">All services are running normally</p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const StatusPage = () => {
                     <div className="flex items-center">
                       {getStatusIcon(service.status)}
                       <div className="ml-3">
-                        <h3 className="text-lg font-semibold text-gray-800">{service.name}</h3>
+                        <h3 className="text-lg font-normal text-gray-800">{service.name}</h3>
                         <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(service.status)}`}>
                           {service.status.charAt(0).toUpperCase() + service.status.slice(1)}
                         </span>
@@ -77,7 +77,7 @@ const StatusPage = () => {
                     </div>
                     <div className="text-right">
                       <p className="text-sm text-gray-600">30-day uptime</p>
-                      <p className="text-lg font-semibold text-gray-800">{service.uptime}</p>
+                      <p className="text-lg font-normal text-gray-800">{service.uptime}</p>
                     </div>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ const StatusPage = () => {
                 <div className="flex items-start">
                   <FiAlertTriangle className="text-yellow-500 text-xl mr-3 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Email Service Degradation</h3>
+                    <h3 className="text-lg font-normal text-gray-800 mb-2">Email Service Degradation</h3>
                     <p className="text-gray-600 mb-2">
                       Some users may experience delays in email delivery. We are working to resolve this issue.
                     </p>
@@ -105,7 +105,7 @@ const StatusPage = () => {
                 <div className="flex items-start">
                   <FiCheckCircle className="text-green-500 text-xl mr-3 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Scheduled Maintenance Completed</h3>
+                    <h3 className="text-lg font-normal text-gray-800 mb-2">Scheduled Maintenance Completed</h3>
                     <p className="text-gray-600 mb-2">
                       Database maintenance has been completed successfully. All services are now operational.
                     </p>

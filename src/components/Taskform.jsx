@@ -56,7 +56,7 @@ const TaskForm = ({ onSubmit, task, onCancel }) => {
                 </div>
             </div>
             <div className="flex justify-end gap-4 pt-4 border-t border-gray-200">
-                <button type="button" onClick={onCancel} className="px-6 py-2.5 rounded-lg bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">
+                <button type="button" onClick={onCancel} className="px-6 py-2.5 rounded-lg bg-gray-200 text-gray-800 font-normal hover:bg-gray-300 transition">
                     Cancel
                 </button>
                 <button type="submit" className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">

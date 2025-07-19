@@ -98,7 +98,7 @@ const AboutUs = () => {
           {values.map((value, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center">
               <img src={value.icon} alt="" className="w-16 h-16 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold mb-3">{value.title}</h3>
+              <h3 className="text-2xl font-normal mb-3">{value.title}</h3>
               <p className="text-gray-600">{value.description}</p>
             </div>
           ))}

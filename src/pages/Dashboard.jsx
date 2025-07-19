@@ -56,7 +56,7 @@ const Dashboard = () => {
         </div>
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Sales</p>
-          <h3 className="text-xl font-normal text-orange-500">$574.34</h3>
+          <h3 className="text-xl font-medium text-orange-500">$574.34</h3>
           <p className="text-xs text-green-500">+23% since last month</p>
         </div>
         <div className="col-span-2 bg-white p-4 rounded-xl shadow">
@@ -142,7 +142,7 @@ const Dashboard = () => {
                   {
                     label: 'Revenue - Tier 1',
                     data: [500, 600, 700, 800, 900, 800, 850],
-                    backgroundColor: '#D97706',
+                    backgroundColor: '#FED7AA',
                     barPercentage: 0.3,
                     categoryPercentage: 0.5,
                     borderRadius: 8,
@@ -150,7 +150,7 @@ const Dashboard = () => {
                   {
                     label: 'Revenue - Tier 2',
                     data: [300, 400, 450, 500, 600, 550, 580],
-                    backgroundColor: '#F97316',
+                    backgroundColor: '#FB923C',
                     barPercentage: 0.3,
                     categoryPercentage: 0.5,
                     borderRadius: 8,
@@ -158,7 +158,7 @@ const Dashboard = () => {
                   {
                     label: 'Revenue - Tier 3',
                     data: [100, 200, 250, 300, 350, 300, 320],
-                    backgroundColor: '#9CA3AF',
+                    backgroundColor: '#EA580C',
                     barPercentage: 0.3,
                     categoryPercentage: 0.5,
                     borderRadius: 8,
@@ -218,7 +218,7 @@ const Dashboard = () => {
                     <td className="px-4 py-2">{name}</td>
                     <td className="px-4 py-2">
                       <span className="flex items-center gap-2">
-                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-bold text-white rounded-full ${
+                        <span className={`w-5 h-5 flex items-center justify-center text-xs font-medium text-white rounded-full ${
   status === "Approved" ? "bg-orange-500" :
   status === "Disable" ? "bg-red-500" :
   "bg-yellow-400"
@@ -394,7 +394,7 @@ const Dashboard = () => {
               ["Promotional LP", false],
             ].map(([task, done], i) => (
               <li key={i} className="flex items-center gap-2 mb-2">
-                <input type="checkbox" checked={done} readOnly />
+                <input type="checkbox" className="accent-orange-500 checked:text-white text-white" checked={done} readOnly />
                 {task}
               </li>
             ))}

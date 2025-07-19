@@ -129,7 +129,7 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
           </div>
           
           <div className="mt-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Comments</h3>
+            <h3 className="text-lg font-normal text-gray-800 mb-3">Comments</h3>
             <div className="space-y-3 max-h-40 overflow-y-auto pr-2">
               {(formData.comments || []).map(comment => (
                 <div key={comment.id} className="bg-gray-50 p-3 rounded-lg">
@@ -152,7 +152,7 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
               <button
                 type="button"
                 onClick={handleCommentSubmit}
-                className="mt-2 px-4 py-2 text-sm text-white bg-orange-500 rounded-md hover:bg-orange-600 font-semibold transition-colors"
+                className="mt-2 px-4 py-2 text-sm text-white bg-orange-500 rounded-md hover:bg-orange-600 font-normal transition-colors"
               >
                 Add Comment
               </button>
@@ -160,7 +160,7 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
           </div>
 
           <div className="mt-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Checklist</h3>
+            <h3 className="text-lg font-normal text-gray-800 mb-3">Checklist</h3>
             <div className="space-y-2">
               {(formData.checklist || []).map(item => (
                 <div key={item.id} className="flex items-center gap-3 bg-gray-50 p-2 rounded-lg">
@@ -188,7 +188,7 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
                 placeholder="Add a new sub-task"
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-sm"
               />
-              <button type="button" onClick={handleAddSubtask} className="px-4 py-2 text-sm text-white bg-orange-500 rounded-md hover:bg-orange-600 font-semibold transition-colors">
+              <button type="button" onClick={handleAddSubtask} className="px-4 py-2 text-sm text-white bg-orange-500 rounded-md hover:bg-orange-600 font-normal transition-colors">
                 Add
               </button>
             </div>
@@ -199,13 +199,13 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 font-semibold transition-colors"
+                className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 font-normal transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-6 py-2 text-white bg-orange-500 rounded-lg hover:bg-orange-600 font-semibold shadow-md hover:shadow-lg transition-all"
+                className="px-6 py-2 text-white bg-orange-500 rounded-lg hover:bg-orange-600 font-normal shadow-md hover:shadow-lg transition-all"
               >
                 {task && task.id ? 'Save Changes' : 'Create Task'}
               </button>

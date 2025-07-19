@@ -51,7 +51,7 @@ const FAQ = () => {
   return (
     <section className="bg-white py-20 px-4 font-sans">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-5xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-5xl font-medium text-gray-800 mb-4">Frequently Asked Questions</h2>
         <p className="max-w-3xl mx-auto text-gray-600 mb-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
         </p>

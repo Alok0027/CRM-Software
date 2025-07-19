@@ -124,7 +124,7 @@ const Benefit = () => {
           
           <h1
             ref={line4Ref}
-            className={`text-3xl md:text-5xl font-semibold leading-tight transition duration-300 ${
+            className={`text-3xl md:text-5xl font-normal leading-tight transition duration-300 ${
               activeLine === 4 ? 'text-black' : 'text-gray-500'
             }`}
           >
@@ -148,7 +148,7 @@ const Benefit = () => {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-semibold text-gray-800 mb-4 leading-snug"
+          className="text-3xl md:text-5xl font-normal text-gray-800 mb-4 leading-snug"
         >
           <span className="italic font-medium text-black">Never miss out on a </span>
           <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 font-medium relative inline-block">
@@ -164,7 +164,7 @@ const Benefit = () => {
           viewport={{ once: true }}
           className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-10"
         >
-          <span className="font-semibold text-gray-800">
+          <span className="font-normal text-gray-800">
             Schedule calls, meetings, mailings, or quotations
           </span>
           , and Odoo automatically plans the next activity based on your sales script.

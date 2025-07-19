@@ -8,7 +8,7 @@ const Profile = () => {
   const UserInfo = () => (
     <div className="bg-gray-100 p-6 rounded-2xl">
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-bold text-gray-800">User Information</h3>
+        <h3 className="text-xl font-medium text-gray-800">User Information</h3>
         <button className="text-gray-500 hover:text-orange-500"><FiEdit2 /></button>
       </div>
       <div className="mt-4 space-y-3">
@@ -30,7 +30,7 @@ const Profile = () => {
 
   const ProfileSettings = () => (
     <div className="bg-white p-6 rounded-2xl shadow-lg">
-        <h3 className="text-xl font-bold text-gray-800 mb-4">Profile Settings</h3>
+        <h3 className="text-xl font-medium text-gray-800 mb-4">Profile Settings</h3>
         <form className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -85,7 +85,7 @@ const Profile = () => {
       </div>
 
       <div className="mt-20 ml-6">
-        <h2 className="text-3xl font-bold text-gray-800">Alok Mishra </h2>
+        <h2 className="text-3xl font-medium text-gray-800">Alok Mishra </h2>
         <p className="text-gray-500">UI/UX Designer</p>
       </div>
 

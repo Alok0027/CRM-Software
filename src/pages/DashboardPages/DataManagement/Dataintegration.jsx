@@ -114,7 +114,7 @@ const DataIntegration = () => {
             {integration.icon}
           </div>
           <div>
-            <h3 className="font-semibold text-gray-800">{integration.name}</h3>
+            <h3 className="font-normal text-gray-800">{integration.name}</h3>
             <p className="text-sm text-gray-600">{integration.type}</p>
           </div>
         </div>
@@ -162,7 +162,7 @@ const DataIntegration = () => {
         <div className="p-6 border-b border-gray-200">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-xl font-semibold text-gray-800">Add New Integration</h2>
+              <h2 className="text-xl font-normal text-gray-800">Add New Integration</h2>
               <p className="text-gray-600">Connect your favorite tools and databases</p>
             </div>
             <button onClick={() => setShowAddModal(false)} className="text-gray-500 hover:text-gray-700">
@@ -229,7 +229,7 @@ const DataIntegration = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Data Integration</h1>
+            <h1 className="text-3xl font-medium text-gray-800 mb-2">Data Integration</h1>
             <p className="text-gray-600">Connect and sync data from your favorite tools, CRMs, apps, and databases</p>
           </div>
           <button 
@@ -247,7 +247,7 @@ const DataIntegration = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Connected Sources</p>
-                <p className="text-2xl font-bold text-orange-600">{integrations.filter(i => i.status === 'synced').length}</p>
+                <p className="text-2xl font-medium text-orange-600">{integrations.filter(i => i.status === 'synced').length}</p>
               </div>
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                 <FiDatabase className="w-6 h-6 text-orange-600" />
@@ -259,7 +259,7 @@ const DataIntegration = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Total Records</p>
-                <p className="text-2xl font-bold text-orange-600">{integrations.reduce((sum, i) => sum + i.recordsCount, 0).toLocaleString()}</p>
+                <p className="text-2xl font-medium text-orange-600">{integrations.reduce((sum, i) => sum + i.recordsCount, 0).toLocaleString()}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <FiFileText className="w-6 h-6 text-blue-600" />
@@ -271,7 +271,7 @@ const DataIntegration = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Active Syncs</p>
-                <p className="text-2xl font-bold text-orange-600">{integrations.filter(i => i.status === 'synced').length}</p>
+                <p className="text-2xl font-medium text-orange-600">{integrations.filter(i => i.status === 'synced').length}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <FiRefreshCw className="w-6 h-6 text-green-600" />
@@ -283,7 +283,7 @@ const DataIntegration = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Needs Attention</p>
-                <p className="text-2xl font-bold text-orange-600">{integrations.filter(i => i.status === 'needs_auth' || i.status === 'error').length}</p>
+                <p className="text-2xl font-medium text-orange-600">{integrations.filter(i => i.status === 'needs_auth' || i.status === 'error').length}</p>
               </div>
               <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
                 <FiAlertTriangle className="w-6 h-6 text-yellow-600" />

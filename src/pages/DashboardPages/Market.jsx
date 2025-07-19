@@ -27,7 +27,7 @@ const Marketing = () => {
     <div className="p-6 min-h-screen bg-gray-100">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-semibold text-gray-800">Marketing</h1>
+        <h1 className="text-3xl font-medium text-gray-800">Marketing</h1>
         <button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md shadow">
           <FiPlus /> New Campaign
         </button>
@@ -43,7 +43,7 @@ const Marketing = () => {
         ].map((item, idx) => (
           <div key={idx} className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center shadow">
             <p className="text-sm text-gray-500">{item.title}</p>
-            <p className="text-2xl font-semibold text-orange-600">{item.value}</p>
+            <p className="text-2xl font-medium text-orange-600">{item.value}</p>
           </div>
         ))}
       </div>

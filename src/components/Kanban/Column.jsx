@@ -9,8 +9,8 @@ const Column = ({ id, title, tasks, onEditTask, onDeleteTask, onAddTask }) => {
       {/* Column Header */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2">
-          <h3 className="font-bold text-gray-800">{title}</h3>
-          <span className="bg-gray-300 text-gray-600 text-xs font-semibold px-2 py-1 rounded-full">
+          <h3 className="font-medium text-gray-800">{title}</h3>
+          <span className="bg-gray-300 text-gray-600 text-xs font-normal px-2 py-1 rounded-full">
             {tasks.length}
           </span>
         </div>
