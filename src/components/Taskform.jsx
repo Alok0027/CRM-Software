@@ -55,12 +55,12 @@ const TaskForm = ({ onSubmit, task, onCancel }) => {
                     <input type="date" name="dueDate" id="dueDate" value={formData.dueDate} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 transition" />
                 </div>
             </div>
-            <div className="flex justify-end gap-4 pt-4 border-t border-gray-200">
-                <button type="button" onClick={onCancel} className="px-6 py-2.5 rounded-lg bg-gray-200 text-gray-800 font-normal hover:bg-gray-300 transition">
+            <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-4 pt-4 border-t border-gray-200">
+                <button type="button" onClick={onCancel} className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-200 text-gray-800 font-normal hover:bg-gray-300 transition">
                     Cancel
                 </button>
-                <button type="submit" className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                    Update Task
+                <button type="submit" className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                    {task ? 'Update Task' : 'Add Task'}
                 </button>
             </div>
         </form>

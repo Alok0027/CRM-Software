@@ -34,34 +34,34 @@ const Hero = () => {
     };
   }, []);
 
-  const rotation = Math.max(0, 22.5 - scrollPosition / 20);
+  const rotation = Math.max(0, 15 - scrollPosition / 25);
   const perspective = 1000;
   const imageStyle = {
     transform: `perspective(${perspective}px) rotateX(${rotation}deg)`,
     transition: 'transform 0.2s ease-out',
   };
   return (
-    <div className="text-center py-16 px-5 bg-white font-sans mt-6">
-      <div className="relative h-64 mb-10">
-        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-7xl font-black leading-tight" style={{ fontFamily: "'Inter', sans-serif, fontWeight: 1000" }}>
-          <span className="text-neutral-700">Unleash the Power of Your</span><br /><span className="text-neutral-700">Business with</span> <span className="text-orange-500">ClientNest</span><span className="text-neutral-700">!</span>
+    <div className="text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white font-sans mt-16 sm:mt-20">
+      <div className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-[250px] mb-6 sm:mb-8">
+        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight sm:leading-tight px-2 sm:px-4" style={{ fontFamily: "'Inter', sans-serif, fontWeight: 1000" }}>
+          <span className="text-neutral-700">Unleash the Power of Your</span><br className="hidden sm:block" /><span className="sm:hidden"> </span><span className="text-neutral-700">Business with</span> <span className="text-orange-500">ClientNest</span><span className="text-neutral-700">!</span>
         </h1>
       </div>
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-lg font-light text-gray-600 mb-8 max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto text-center px-4">
+        <p className="text-base lg:text-lg font-light text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
           Your gateway to a vibrant online presence. Our SaaS software infuses your website with citrusy energy, ensuring you stand out and captivate your audience. Elevate your digital presence with ClientNest today!
         </p>
       </div>
-      <div className="mt-16">
-        <div className="w-full logo-carousel">
+      <div className="mt-8 sm:mt-12">
+        <div className="w-full logo-carousel overflow-hidden">
           <div className="flex animate-scroll">
             {[...logos, ...logos].map((logo, index) => (
-              <img key={index} src={logo.src} alt={logo.alt} className="h-8 mx-16 flex-shrink-0 filter grayscale opacity-60" />
+              <img key={index} src={logo.src} alt={logo.alt} className="h-6 sm:h-8 mx-6 sm:mx-10 lg:mx-12 flex-shrink-0 filter grayscale opacity-60" />
             ))}
           </div>
         </div>
-        <div className="mt-12 flex justify-center">
-           <img src={heroimg} alt="Dashboard preview" className="w-9/12 rounded-lg shadow-xl" style={imageStyle} />
+        <div className="mt-8 sm:mt-12 flex justify-center px-4">
+           <img src={heroimg} alt="Dashboard preview" className="w-full sm:w-11/12 lg:w-9/12 max-w-4xl rounded-lg shadow-xl" style={imageStyle} />
         </div>
       </div>
     </div>

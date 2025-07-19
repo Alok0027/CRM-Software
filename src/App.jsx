@@ -65,9 +65,13 @@ const DashboardLayout = ({ children }) => {
     <div className="relative min-h-screen bg-gray-100">
       <Sidebar isExpanded={isSidebarExpanded} setIsExpanded={setIsSidebarExpanded} />
       <div
-        className={`transition-all duration-300 ease-in-out ${isSidebarExpanded ? 'ml-64' : 'ml-20'}`}>
+        className={`transition-all duration-300 ease-in-out ${
+          isSidebarExpanded 
+            ? 'ml-0 lg:ml-64' 
+            : 'ml-0 lg:ml-20'
+        }`}>
         <Topbar />
-        <main className="p-6">
+        <main className="p-3 sm:p-4 lg:p-6">
           {children}
         </main>
       </div>

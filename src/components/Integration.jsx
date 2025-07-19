@@ -30,11 +30,11 @@ const integrations = [
 
 const Integration = () => {
   return (
-    <section className="py-20 px-10 bg-white font-sans">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-start mb-16">
-          <div className="max-w-2xl">
-            <h2 className="text-5xl font-medium text-gray-800 mb-4">Seamless Integrations</h2>
+        <div className="flex flex-col sm:flex-row justify-between items-start mb-12 sm:mb-16">
+          <div className="max-w-2xl mb-6 sm:mb-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-800 mb-4">Seamless Integrations</h2>
             <p className="text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
             </p>

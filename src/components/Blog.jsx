@@ -36,11 +36,11 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <section className="py-24 px-10 bg-white font-sans">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-start mb-16">
-          <div className="max-w-3xl">
-            <h2 className="text-5xl font-medium text-gray-800 mb-4">Stay Informed with Our Blog</h2>
+        <div className="flex flex-col sm:flex-row justify-between items-start mb-12 sm:mb-16">
+          <div className="max-w-3xl mb-6 sm:mb-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-800 mb-4">Stay Informed with Our Blog</h2>
             <p className="text-gray-600">
               Discover valuable insights, tips, and industry news in our blog. We keep you up-to-date with the latest trends, best practices, and innovative ideas to help you succeed online. Dive into our blog and stay informed as you enhance your digital presence.
             </p>
@@ -62,8 +62,8 @@ const Blog = () => {
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="text-xl font-medium text-gray-800 mb-3 h-20">{post.title}</h3>
-                <p className="text-gray-600 text-sm h-28">{post.excerpt}</p>
+                <h3 className="text-xl font-medium text-gray-800 mb-3 min-h-[5rem]">{post.title}</h3>
+                <p className="text-gray-600 text-sm min-h-[7rem]">{post.excerpt}</p>
               </div>
             </Link>
           ))}

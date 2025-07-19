@@ -21,8 +21,8 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             className="bg-white rounded-xl shadow-2xl w-full max-w-lg relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center p-5 border-b border-gray-200">
-              <h3 className="text-xl font-normal text-gray-800">{title}</h3>
+            <div className="flex justify-between items-center p-4 sm:p-5 border-b border-gray-200">
+              <h3 className="text-lg sm:text-xl font-normal text-gray-800">{title}</h3>
               <button 
                 onClick={onClose} 
                 className="p-2 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -30,7 +30,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
                 <FiX className="h-6 w-6 text-gray-500" />
               </button>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               {children}
             </div>
           </motion.div>

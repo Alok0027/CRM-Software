@@ -39,41 +39,24 @@ const Logo = () => {
   const visibleLogos = logos.slice(currentIndex, currentIndex + 6);
 
   return (
-    <div className="flex flex-col items-center text-center mt-20">
+    <div className="flex flex-col items-center text-center mt-16 sm:mt-20">
       <p className="text-gray-500 text-sm tracking-widest uppercase mb-2">
         Trusted by teams at
       </p>
 
-      <div className="flex flex-col gap-y-12 py-10">
-        <div
-          className={`grid grid-cols-3 gap-x-12 transition-all duration-700 ease-in-out ${
-            fade ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'
-          }`}
-        >
-          {visibleLogos.slice(0, 3).map((logo, idx) => (
-            <img
-              key={idx}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-12 w-auto object-contain mx-auto"
-            />
-          ))}
-        </div>
-
-        <div
-          className={`grid grid-cols-3 gap-x-12 transition-all duration-700 ease-in-out delay-150 ${
-            fade ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'
-          }`}
-        >
-          {visibleLogos.slice(3, 6).map((logo, idx) => (
-            <img
-              key={idx}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-12 w-auto object-contain mx-auto"
-            />
-          ))}
-        </div>
+      <div
+        className={`grid grid-cols-2 sm:grid-cols-3 gap-x-8 sm:gap-x-12 gap-y-10 py-10 transition-opacity duration-700 ease-in-out ${
+          fade ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        {visibleLogos.map((logo, idx) => (
+          <img
+            key={idx}
+            src={logo.src}
+            alt={logo.alt}
+            className="h-10 sm:h-12 w-auto object-contain mx-auto"
+          />
+        ))}
       </div>
     </div>
   );

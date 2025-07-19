@@ -44,22 +44,22 @@ const Painpoints = ({ painPointsData, title }) => {
   }, [painPointsData]); // Rerun effect if data changes
 
   return (
-    <div className="bg-white py-20" ref={containerRef}>
+    <div className="bg-white py-16 sm:py-20" ref={containerRef}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-medium text-center text-gray-800 mb-12">{title}</h2>
+        <h2 className="text-3xl sm:text-4xl font-medium text-center text-gray-800 mb-12 sm:mb-16">{title}</h2>
         <div className="space-y-16">
           {painPointsData.map((point, index) => (
-            <div key={index} className="pain-point-section flex items-center overflow-hidden bg-gray-50 rounded-lg shadow-md">
-              <div className="relative w-1/2 h-80">
+            <div key={index} className="pain-point-section flex flex-col md:flex-row items-center overflow-hidden bg-gray-50 rounded-lg shadow-md">
+              <div className="relative w-full md:w-1/2 h-72 md:h-80">
                 <img src={point.img} alt={point.title} className="pain-point-image absolute top-0 left-0 w-full h-full object-cover" />
                 <div className="pain-point-title absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <h3 className="text-white text-3xl font-medium text-center px-4">{point.title}</h3>
+                  <h3 className="text-white text-2xl sm:text-3xl font-medium text-center px-4">{point.title}</h3>
                 </div>
                 <div className="pain-point-text absolute inset-0 bg-orange-600/90 flex items-center justify-center p-8 opacity-0">
                   <p className="text-white text-lg text-center">{point.text}</p>
                 </div>
               </div>
-              <div className="w-1/2 p-12">
+              <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12">
                 <h3 className="text-2xl font-medium text-gray-800 mb-4">{point.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{point.text}</p>
               </div>

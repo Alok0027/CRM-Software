@@ -44,36 +44,39 @@ const Dashboard = () => {
   }, []);
 
   return (
-        <div className="bg-gray-100 min-h-screen px-6 py-4 text-gray-800">
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+    <div className="bg-gray-100 min-h-screen px-3 sm:px-4 lg:px-6 py-4 text-gray-800">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 lg:gap-6 mb-6">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Earnings</p>
           <h3 className="text-xl font-normal">$350.4</h3>
         </div>
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Spend this month</p>
           <h3 className="text-xl font-normal">$642.39</h3>
         </div>
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Sales</p>
           <h3 className="text-xl font-medium text-orange-500">$574.34</h3>
           <p className="text-xs text-green-500">+23% since last month</p>
         </div>
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Your balance</p>
           <h3 className="text-xl font-medium">$1,000</h3>
         </div>
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">New Tasks</p>
           <h3 className="text-xl font-medium">154</h3>
         </div>
-        <div className="col-span-2 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-sm">Total Projects</p>
           <h3 className="text-xl font-medium">2935</h3>
         </div>
+      </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
         {/* Line Chart */}
-        <div className="col-span-6 bg-white p-6 rounded-xl shadow h-60">
+        <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-xl shadow">
+          <div className="h-60">
           <div className="flex justify-between items-center h-full gap-4">
             <div className="flex flex-col justify-between h-full">
               <div>
@@ -128,6 +131,7 @@ const Dashboard = () => {
               />
             </div>
           </div>
+        </div>
         </div>
 
         <div className="col-span-6 bg-white p-6 rounded-xl shadow h-60">
@@ -350,32 +354,43 @@ const Dashboard = () => {
           </div>
         </div>
 
+      </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         {/* Pie Chart */}
-        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <p className="text-md font-medium mb-4">Your Pie Chart</p>
-          <div className="w-full h-32">
-            <Pie
-              data={{
-                labels: ['Your Files', 'System'],
-                datasets: [{
-                  data: [63, 25],
-                  backgroundColor: ['#FB923C', '#E5E7EB'],
-                  borderColor: '#fff',
-                  borderWidth: 2,
-                }]
-              }}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: 'bottom',
-                    labels: {
-                      color: '#6B7280',
+          <div className="w-full h-48 flex items-center justify-center">
+            <div className="w-40 h-40">
+              <Pie
+                data={{
+                  labels: ['Your Files', 'System'],
+                  datasets: [{
+                    data: [63, 25],
+                    backgroundColor: ['#FB923C', '#E5E7EB'],
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                  }]
+                }}
+                options={{
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    legend: {
+                      position: 'bottom',
+                      labels: {
+                        color: '#6B7280',
+                        boxWidth: 12,
+                        padding: 8,
+                        font: {
+                          size: 11
+                        }
+                      },
                     },
                   },
-                },
-              }}
-            />
+                }}
+              />
+            </div>
           </div>
           <div className="flex justify-between text-xs mt-2">
             <span>Your files 63%</span>
@@ -384,7 +399,7 @@ const Dashboard = () => {
         </div>
 
         {/* Tasks */}
-        <div className="col-span-3 bg-white p-4 rounded-xl shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <h4 className="text-md font-medium mb-4">Tasks</h4>
           <ul className="text-sm">
             {[

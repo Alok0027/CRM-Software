@@ -47,3 +47,14 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
+
+@media (max-width: 640px) {
+  .preloader-logo {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+
+  .loading-bar {
+    width: 120px;
+  }
+}

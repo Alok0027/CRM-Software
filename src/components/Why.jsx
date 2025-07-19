@@ -38,14 +38,14 @@ const Why = () => {
   ];
 
   return (
-    <section className="py-20 px-10 bg-white font-sans mt-10 mb-32">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-        <div className="relative h-[400px]">
+    <section className="py-16 sm:py-20 px-6 sm:px-10 bg-white font-sans mt-10 mb-16 sm:mb-20 md:mb-32">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+        <div className="relative h-[300px] md:h-[400px]">
           <img src={why1} alt="Check Table" className="absolute top-0 left-0 w-full h-auto rounded-lg shadow-lg" />
-          <img src={why2} alt="Zestful Sidebar" className=" h-80 absolute top-96 left-[90%] w-1/3 rounded-lg shadow-lg transform -translate-y-1/2 -translate-x-1/2" />
+          <img src={why2} alt="Zestful Sidebar" className="hidden md:block h-80 absolute top-96 left-[90%] w-1/3 rounded-lg shadow-lg transform -translate-y-1/2 -translate-x-1/2" />
         </div>
         <div>
-          <h2 className="text-4xl font-medium text-gray-800 mb-4">Why Choose ClientNest?</h2>
+          <h2 className="text-3xl sm:text-4xl font-medium text-gray-800 mb-4">Why Choose ClientNest?</h2>
           <p className="text-gray-600 mb-8">
             ClientNest is your passport to an enriched online journey. Our SaaS offers a range of benefits to help you thrive in the digital realm. Here are some compelling reasons why ClientNest is the ideal choice for your web application:
           </p>

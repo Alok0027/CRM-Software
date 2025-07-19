@@ -36,11 +36,11 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-orange-500 py-24 px-10 font-sans text-white">
+    <section className="bg-orange-500 py-16 sm:py-24 px-6 sm:px-10 font-sans text-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-12">
-          <h2 className="text-5xl font-medium mb-4">200+ Happy Customers</h2>
-          <p className="text-lg max-w-5xl">
+          <h2 className="text-4xl sm:text-5xl font-medium mb-4">200+ Happy Customers</h2>
+          <p className="text-base sm:text-lg max-w-5xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
           </p>
         </div>
@@ -48,11 +48,11 @@ const Testimonials = () => {
         <div className="w-full overflow-hidden">
           <div className="flex animate-scroll">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div key={index} className="bg-orange-400 bg-opacity-75 p-8 rounded-lg shadow-lg mx-4 flex-shrink-0" style={{width: '480px'}}>
+              <div key={index} className="bg-orange-400 bg-opacity-75 p-6 sm:p-8 rounded-lg shadow-lg mx-4 flex-shrink-0 w-[90vw] max-w-sm sm:max-w-md md:max-w-lg">
                 <h3 className="text-2xl font-medium mb-4">{testimonial.quote}</h3>
-                <p className="text-white text-opacity-90 mb-6 h-40">{testimonial.text}</p>
+                <p className="text-white text-opacity-90 mb-6 min-h-[10rem] sm:min-h-[8rem]">{testimonial.text}</p>
                 <div className="flex items-center mt-8">
-                  <img src={testimonial.avatar} alt={testimonial.author} className="w-16 h-16 rounded-full mr-4 border-2 border-white" />
+                  <img src={testimonial.avatar} alt={testimonial.author} className="w-12 h-12 sm:w-16 sm:h-16 rounded-full mr-4 border-2 border-white" />
                   <div>
                     <p className="font-medium text-lg">{testimonial.author}</p>
                     <p className="text-white text-opacity-80">{testimonial.title}</p>

@@ -68,10 +68,10 @@ const Testimonial = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-16 sm:py-20">
       <div className="max-w-[1400px] mx-auto px-6 overflow-hidden">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-medium text-gray-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 leading-tight">
             What our customers <br /> say about us
           </h2>
         </div>
@@ -81,13 +81,13 @@ const Testimonial = () => {
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="shrink-0 w-[320px] sm:w-[400px] min-h-96 bg-white border rounded-xl p-6 flex flex-col justify-between mx-3"
+                className="shrink-0 w-[300px] sm:w-[350px] md:w-[400px] min-h-[22rem] sm:min-h-[24rem] bg-white border rounded-xl p-5 sm:p-6 flex flex-col justify-between mx-3"
               >
                 <div>
-                  <h3 className="text-xl font-base mb-3 text-gray-900">
+                  <h3 className="text-lg sm:text-xl font-base mb-3 text-gray-900">
                     {testimonial.title}
                   </h3>
-                  <p className="text-base text-gray-600 leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
                     {testimonial.quote}
                   </p>
                 </div>

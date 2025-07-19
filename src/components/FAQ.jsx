@@ -39,19 +39,19 @@ const Accordion = ({ question, answer }) => {
 };
 
 const faqsList = [
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
-    { question: 'What will my Project cost?', answer: 'The cost of your project will depend on the scope of work. We offer a variety of packages to fit your needs.' },
+    { question: 'How do I get started with ClientNest?', answer: 'Getting started is easy! Simply sign up for a free trial on our website, and you can begin exploring our features right away. No credit card required.' },
+    { question: 'Can I import my existing contacts?', answer: 'Yes, you can easily import your contacts from a CSV file or directly from other services like Google Contacts. Our system will guide you through the process.' },
+    { question: 'Is my data secure with ClientNest?', answer: 'Absolutely. We use industry-standard encryption and security protocols to ensure your data is always safe and private. Your security is our top priority.' },
+    { question: 'What integrations do you offer?', answer: 'We offer a wide range of integrations with popular tools like Slack, Google Calendar, Mailchimp, and more. You can find the full list on our integrations page.' },
+    { question: 'Is there a mobile app?', answer: 'Yes, ClientNest is available on both iOS and Android, so you can manage your customer relationships on the go. Download it from the App Store or Google Play.' },
+    { question: 'What kind of support do you provide?', answer: 'We offer 24/7 email support, as well as live chat support during business hours. Our Pro and Enterprise plans also include a dedicated account manager.' },
 ];
 
 const FAQ = () => {
   return (
-    <section className="bg-white py-20 px-4 font-sans">
+    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-5xl font-medium text-gray-800 mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-800 mb-4">Frequently Asked Questions</h2>
         <p className="max-w-3xl mx-auto text-gray-600 mb-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
         </p>

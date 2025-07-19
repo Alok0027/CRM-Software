@@ -64,10 +64,10 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 transition-opacity duration-300">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg p-8 m-4 transform transition-all duration-300 scale-95 hover:scale-100">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 sm:p-8 m-4 transform transition-all duration-300 scale-95 hover:scale-100">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-medium text-gray-800">{task ? 'Edit Task' : 'Create New Task'}</h2>
+            <h2 className="text-xl sm:text-2xl font-medium text-gray-800">{task ? 'Edit Task' : 'Create New Task'}</h2>
             <button type="button" onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-100">
               <FiX size={24} />
             </button>
@@ -194,18 +194,18 @@ const TaskModal = ({ task, isOpen, onClose, onSave }) => {
             </div>
           </div>
 
-          <div className="flex justify-end items-center mt-8 pt-6 border-t border-gray-200">
+          <div className="flex flex-col-reverse sm:flex-row justify-end items-center gap-3 mt-8 pt-6 border-t border-gray-200">
             <div className="flex gap-4">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 font-normal transition-colors"
+                className="w-full sm:w-auto px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 font-normal transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-6 py-2 text-white bg-orange-500 rounded-lg hover:bg-orange-600 font-normal shadow-md hover:shadow-lg transition-all"
+                className="w-full sm:w-auto px-6 py-2 text-white bg-orange-500 rounded-lg hover:bg-orange-600 font-normal shadow-md hover:shadow-lg transition-all"
               >
                 {task && task.id ? 'Save Changes' : 'Create Task'}
               </button>

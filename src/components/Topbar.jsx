@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FiSearch, FiBell } from "react-icons/fi";
+import { FiSearch, FiBell, FiMenu } from "react-icons/fi";
 import { BsFillSunFill } from "react-icons/bs";
 
 const pageTitles = {
@@ -29,7 +29,7 @@ const pageTitles = {
   "/audit-logs": { breadcrumb: "Data Management / Audit Logs", title: "Audit Logs" },
 };
 
-const Topbar = () => {
+const Topbar = ({ setIsExpanded }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
@@ -58,30 +58,47 @@ const Topbar = () => {
 
   // Get current path and match to title/breadcrumb
   const { breadcrumb, title } = pageTitles[location.pathname] || { breadcrumb: "Pages", title: "Dashboard" };
+  const location = useLocation();
 
   return (
-    <div className="w-full px-6 py-4 bg-gray-100 flex items-center justify-between">
+    <div className="w-full px-4 sm:px-6 py-4 bg-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div>
         <p className="text-sm text-gray-500">{breadcrumb}</p>
-        <h1 className="text-3xl font-medium text-gray-800">{title}</h1>
+        <h1 className="text-2xl md:text-3xl font-medium text-gray-800">{title}</h1>
       </div>
       
-      <div className="flex items-center gap-4 bg-white rounded-full shadow-sm px-4 py-2">
-        <div className="relative">
-          <FiSearch className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search"
-            className="pl-8 bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
-          />
+      <div className="w-full md:w-auto flex items-center justify-between">
+        {/* Search and icons for larger screens */}
+        <div className="hidden md:flex items-center gap-4 bg-white rounded-full shadow-sm px-4 py-2">
+          <div className="relative">
+            <FiSearch className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search"
+              className="pl-8 bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
+            />
+          </div>
+          
+          <div className="w-px h-6 bg-gray-200 mx-2"></div>
+
+          <div className="flex items-center gap-4">
+            <FiBell className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
+            <BsFillSunFill className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
+          </div>
         </div>
-        
-        <div className="w-px h-6 bg-gray-200 mx-2"></div>
+
+        {/* Mobile header with menu toggle */}
+        <div className="flex md:hidden items-center gap-4 ml-auto">
+            <FiBell className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
+            <BsFillSunFill className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
+        </div>
+
+        <div className="w-px h-6 bg-gray-200 mx-2 hidden md:block"></div>
 
         <div className="flex items-center gap-4">
-          <FiBell className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
-          <BsFillSunFill className="text-xl text-gray-600 hover:text-orange-500 cursor-pointer" />
-          
+          <button onClick={() => setIsExpanded(true)} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 md:hidden">
+            <FiMenu size={20}/>
+          </button>
           <div className="relative" ref={dropdownRef}>
             <img
               src="https://randomuser.me/api/portraits/women/8.jpg"
@@ -98,6 +115,7 @@ const Topbar = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

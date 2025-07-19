@@ -53,33 +53,20 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
     }));
   };
 
-  const handleMouseLeave = () => {
-    setIsExpanded(false);
-  };
+
 
   return (
     <aside 
-        className={`h-screen bg-white border-r border-gray-200 text-gray-800 fixed top-0 left-0 z-50 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'}`}
-        onMouseLeave={handleMouseLeave}
+        className={`h-screen bg-white border-r border-gray-200 text-gray-800 fixed top-0 left-0 z-50 flex flex-col transition-transform duration-300 ease-in-out ${isExpanded ? 'w-64 translate-x-0' : 'w-64 -translate-x-full md:w-20 md:translate-x-0'}`}
     >
-      <div className={`p-4 pb-2 mt-5 flex items-center ml-16 ${isExpanded ? 'justify-between' : 'justify-center'}`}>
-        {isExpanded && (
-          <img src={zestfulLogo} alt="Zestful Logo" className="h-8 cursor-pointer" onClick={() => navigate('/dashboard')} />
-        )}
-        {isExpanded && (
-            <button onClick={() => setIsExpanded(false)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
-                <X size={20} />
-            </button>
-        )}
-      </div>
-
-      {!isExpanded && (
-        <div className="flex justify-center py-4">
-            <button onClick={() => setIsExpanded(true)} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200">
-                <Menu size={20}/>
-            </button>
+      <div className="p-4 pb-2 flex items-center justify-between">
+        <div className={`flex items-center gap-2 ${isExpanded ? 'md:ml-0' : 'md:ml-1'}`}>
+            <img src={zestfulLogo} alt="Zestful Logo" className={`h-8 cursor-pointer transition-all duration-300 ${isExpanded ? 'w-auto' : 'w-0 md:w-auto'}`} onClick={() => navigate('/dashboard')} />
         </div>
-      )}
+        <button onClick={() => setIsExpanded(false)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 md:hidden">
+            <X size={20} />
+        </button>
+      </div>
       
       <nav className="flex flex-col gap-2 px-4 py-6 flex-grow">
         <ul className="space-y-2">
@@ -97,9 +84,11 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
                   >
                     <div className="flex items-center">
                       <span className="mr-3 text-lg">{item.icon}</span>
-                      {isExpanded && <span className="font-medium">{item.name}</span>}
+                      <span className={`font-medium overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
                     </div>
-                    {isExpanded && (expandedItems[item.name] ? <FiChevronDown /> : <FiChevronRight />)}
+                    <div className={`overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full' : 'w-0'}`}>
+                      {expandedItems[item.name] ? <FiChevronDown /> : <FiChevronRight />}
+                    </div>
                   </button>
                   {expandedItems[item.name] && isExpanded && (
                     <ul className="ml-8 mt-2 space-y-1">
@@ -130,7 +119,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
                   }`}
                 >
                   <span className="mr-3 text-lg">{item.icon}</span>
-                  {isExpanded && <span className="font-medium">{item.name}</span>}
+                  <span className={`font-medium overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full ml-0' : 'w-0 -ml-4'}`}>{item.name}</span>
                 </Link>
               )}
             </li>
@@ -138,7 +127,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
         </ul>
       </nav>
 
-      {isExpanded && (
+      <div className={`overflow-hidden transition-all duration-200 ${isExpanded ? 'w-full' : 'w-0'}`}>
         <div className="px-6 py-4">
           <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white rounded-2xl p-6 text-center relative overflow-hidden">
             <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-white/20 rounded-full"></div>
@@ -152,7 +141,7 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
             </div>
           </div>
         </div>
-      )}
+      </div>
     </aside>
   );
 };

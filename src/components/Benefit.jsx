@@ -61,9 +61,9 @@ const Benefit = () => {
       </div>
 
       
-                  <section className="w-full text-black flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-8 pb-16 gap-y-12 md:gap-x-20">
+                  <section className="w-full text-black flex flex-col md:flex-row items-center justify-between px-6 sm:px-8 md:px-16 pt-8 pb-16 gap-y-12 md:gap-x-16">
         
-        <div className="w-full md:w-[75%] lg:w-[80%] flex justify-center mb-12 md:mb-0">
+        <div className="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
           <img
             src={crmpic1}
             alt="CRM UI preview"

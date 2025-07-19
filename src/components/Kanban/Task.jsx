@@ -59,12 +59,12 @@ const Task = ({ task, onEdit, onDelete }) => {
   };
 
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="bg-white p-4 rounded-lg shadow-sm border border-gray-200/80 relative cursor-grab active:cursor-grabbing">
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-200/80 relative cursor-grab active:cursor-grabbing">
       <div className={`absolute left-0 top-0 bottom-0 w-1.5 rounded-l-lg ${priorityColors[task.priority]}`}></div>
       
       {/* Title */}
       <div className="flex justify-between items-start">
-        <h4 className="font-normal text-gray-800 mb-2 pl-2 flex-1">{task.title}</h4>
+        <h4 className="font-normal text-sm sm:text-base text-gray-800 mb-2 pl-2 flex-1">{task.title}</h4>
         <div className="relative">
           <button onClick={() => setIsMenuOpen(prev => !prev)} className="p-1 rounded-full hover:bg-gray-100">
             <FiMoreHorizontal />
@@ -108,8 +108,8 @@ const Task = ({ task, onEdit, onDelete }) => {
 
       {/* Footer */}
       <div className="border-t border-gray-200/80 pt-3 mt-3">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-4 text-gray-500">
+        <div className="flex flex-wrap justify-between items-center gap-y-2">
+          <div className="flex items-center flex-wrap gap-x-3 sm:gap-x-4 gap-y-2 text-gray-500">
             <span className="flex items-center gap-1.5 text-xs"><FiPaperclip /> {task.attachments}</span>
             <span className="flex items-center gap-1.5 text-xs"><FiMessageSquare /> {task.comments.length}</span>
             {totalCount > 0 && (

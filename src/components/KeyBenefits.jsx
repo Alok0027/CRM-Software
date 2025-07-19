@@ -17,9 +17,9 @@ const KeyBenefits = ({ title, subtitle, description, benefits, backgroundStyle }
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {benefits.map((benefit) => (
-              <div key={benefit.title} className="relative pl-16">
+              <div key={benefit.title} className="relative pl-14 sm:pl-16">
                 <dt className="text-base font-normal leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-orange-500">
                     {benefit.icon}
                   </div>
                   {benefit.title}
