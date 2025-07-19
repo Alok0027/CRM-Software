@@ -15,7 +15,7 @@ ClientNest is a modern, elegant CRM platform built with **React**, **Vite**, **T
 ## 📸 Preview
 
 <p align="center">
-  <img src="assets/preview.png" alt="ClientNest CRM Preview" width="800"/>
+  <img src="src/assets/preview.png" alt="ClientNest CRM Preview" width="800"/>
 </p>
 
 ---
