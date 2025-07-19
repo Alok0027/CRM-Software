@@ -1,9 +1,33 @@
 
 
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FiSearch, FiBell } from "react-icons/fi";
 import { BsFillSunFill } from "react-icons/bs";
+
+const pageTitles = {
+  "/dashboard": { breadcrumb: "Pages / Dashboard", title: "Main Dashboard" },
+  "/dashboard/profile": { breadcrumb: "Pages / Profile", title: "User Profile" },
+  "/dashboard/opportunity": { breadcrumb: "Pages / Deals", title: "Deals" },
+  "/dashboard/kanban": { breadcrumb: "Pages / Kanban", title: "Kanban Board" },
+  "/dashboard/marketplace": { breadcrumb: "Pages / Marketplace", title: "Marketplace" },
+  "/dashboard/marketing": { breadcrumb: "Pages / Marketing", title: "Marketing" },
+  "/dashboard/tables": { breadcrumb: "Pages / Tables", title: "Tables" },
+  "/dashboard/tasks": { breadcrumb: "Pages / Tasks", title: "Tasks" },
+  "/dashboard/settings": { breadcrumb: "Pages / Settings", title: "Settings" },
+  "/dashboard/analytics": { breadcrumb: "Pages / Analytics", title: "Analytics" },
+  "/contacts": { breadcrumb: "Pages / Contacts", title: "Contacts" },
+  "/leads": { breadcrumb: "Pages / Leads", title: "Leads" },
+  "/market": { breadcrumb: "Pages / Market", title: "Market" },
+  "/opportunity": { breadcrumb: "Pages / Deals", title: "Deals" },
+  "/task": { breadcrumb: "Pages / Tasks", title: "Tasks" },
+  "/automation": { breadcrumb: "Pages / Automation", title: "Automation" },
+  "/data-integration": { breadcrumb: "Data Management / Data Integration", title: "Data Integration" },
+  "/data-model": { breadcrumb: "Data Management / Data Model", title: "Data Model" },
+  "/data-enrichment": { breadcrumb: "Data Management / Data Enrichment", title: "Data Enrichment" },
+  "/data-sets": { breadcrumb: "Data Management / Data Sets", title: "Data Sets" },
+  "/audit-logs": { breadcrumb: "Data Management / Audit Logs", title: "Audit Logs" },
+};
 
 const Topbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -32,11 +56,14 @@ const Topbar = () => {
     };
   }, []);
 
+  // Get current path and match to title/breadcrumb
+  const { breadcrumb, title } = pageTitles[location.pathname] || { breadcrumb: "Pages", title: "Dashboard" };
+
   return (
     <div className="w-full px-6 py-4 bg-gray-100 flex items-center justify-between">
       <div>
-        <p className="text-sm text-gray-500">Pages / Dashboard</p>
-        <h1 className="text-3xl font-medium text-gray-800">Main Dashboard</h1>
+        <p className="text-sm text-gray-500">{breadcrumb}</p>
+        <h1 className="text-3xl font-medium text-gray-800">{title}</h1>
       </div>
       
       <div className="flex items-center gap-4 bg-white rounded-full shadow-sm px-4 py-2">

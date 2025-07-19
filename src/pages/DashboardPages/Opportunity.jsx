@@ -14,7 +14,10 @@ const opportunityStages = [
   { name: 'Closed Won', value: 20 },
 ];
 
-const pieColors = ['#FFB84C', '#F266AB', '#A459D1', '#5FBDFF', '#FFC94A'];
+// Orange theme palette
+const pieColors = ['#FFB84C', '#FFA559', '#FF8C42', '#FF7F3F', '#FF6F3C'];
+const barColors = ['#FFB84C', '#FFA559', '#FF8C42', '#FF7F3F', '#FF6F3C']; // for bar chart stages
+const lineGradient = ['#FFB84C', '#FF7F3F']; // for line chart gradient
 
 const monthlyConversionRates = [
   { month: 'Jan', rate: 18 },
@@ -36,9 +39,9 @@ const Opportunity = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="p-6 bg-white min-h-screen">
+    <div className="p-6 bg-gray-100 min-h-screen">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-semibold text-gray-800">Opportunities</h1>
+        <h1 className="text-3xl font-semibold text-gray-800">Deals</h1>
         <button onClick={() => setShowModal(true)} className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md shadow">
           <FiPlus /> New Opportunity
         </button>
@@ -170,7 +173,13 @@ const Opportunity = () => {
               <XAxis dataKey="month" />
               <YAxis />
               {/* Removed <ReTooltip /> */}
-              <Line type="monotone" dataKey="rate" stroke="#FF7F3F" strokeWidth={2} />
+              <defs>
+  <linearGradient id="lineOrangeGradient" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stopColor="#FFB84C"/>
+    <stop offset="100%" stopColor="#FF7F3F"/>
+  </linearGradient>
+</defs>
+<Line type="monotone" dataKey="rate" stroke="url(#lineOrangeGradient)" strokeWidth={3} dot={{ r: 6, fill: '#FFA559', stroke: '#FF7F3F', strokeWidth: 2 }} activeDot={{ r: 8, fill: '#FF8C42', stroke: '#FF6F3C', strokeWidth: 2 }} />
             </LineChart>
             <div className="mt-3 text-sm text-gray-600 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-[#FF7F3F]"></div>
@@ -185,7 +194,9 @@ const Opportunity = () => {
               <XAxis dataKey="stage" />
               <YAxis />
               {/* Removed <ReTooltip /> */}
-              <Bar dataKey="deals" fill="#845EC2" />
+              {opportunityDistribution.map((entry, idx) => (
+  <Bar key={entry.stage} dataKey="deals" fill={barColors[idx % barColors.length]} radius={[8, 8, 0, 0]} />
+))}
             </BarChart>
             <div className="mt-3 text-sm text-gray-600 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-[#845EC2]"></div>

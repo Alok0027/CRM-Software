@@ -24,7 +24,7 @@ const barData = [
 
 const Marketing = () => {
   return (
-    <div className="p-6 min-h-screen bg-white">
+    <div className="p-6 min-h-screen bg-gray-100">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-semibold text-gray-800">Marketing</h1>

@@ -8,17 +8,21 @@ const Navbar = () => {
   const [isPagesMenuOpen, setPagesMenuOpen] = useState(false);
 
   return (
-    <header className="top-0 z-50 bg-white font-['Inter',_sans-serif]">
-      <div className="container mx-auto px-20 py-8 flex justify-between items-center">
+    <header className="top-6 z-50 bg-gray-50 backdrop-blur-md shadow-xl rounded-3xl mx-auto w-[85%] font-['Inter',_sans-serif] transition-all duration-300">
+      <div className="flex px-10 py-3 justify-between items-center mt-6">
         <div className="flex items-center">
           <Link to="/">
             <img src={zestful} alt="Zestful Logo" className="h-8" />
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8 ml-[30rem]">
-          <Link to="/" className="text-gray-800 font-normal hover:text-orange-500 transition-colors">Home</Link>
+        <nav className="hidden md:flex items-center space-x-8 ml-[30rem] pr-4">
+          <Link to="about" className="text-gray-800 font-normal hover:text-orange-500 transition-colors">About Us</Link>
           <Link to="/features" className="text-gray-800 font-normal hover:text-orange-500 transition-colors">Features</Link>
+          <Link to="/pricing" className="block text-gray-800 hover:text-orange-500">Pricing</Link>
+          <Link to="/contact" className="block text-gray-800 hover:text-orange-500">Contact</Link>
+
+{/*
           <div 
             className="relative"
             onMouseEnter={() => setPagesMenuOpen(true)}
@@ -46,7 +50,7 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-          
+          */}
         </nav>
 
         <div className="hidden md:flex items-center space-x-6">

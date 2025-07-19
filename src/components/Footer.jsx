@@ -14,7 +14,14 @@ const Footer = () => {
     'Help Center': '/help-center',
   };
   const utilityLinks = ['Sign Up', 'Sign In', 'Forgot Password', 'Reset Password', 'Confirm E-Mail', 'Terms & Conditions', 'Privacy Policy'];
-  const adminLinks = ['Style Guide', 'Licenses', 'Changelog', 'Navbars', 'Footers', 'CTA Sections', 'Notification Banners'];
+  const resourceLinks = {
+    'Documentation': '/documentation',
+    'API Reference': '/api-reference',
+    'Status Page': '/status',
+    'Changelog': '/changelog',
+    'Security': '/security',
+    'System Status': '/system-status'
+  };
 
   return (
     <footer className="bg-white text-gray-800 font-sans pt-24 pb-12 px-10">
@@ -25,9 +32,9 @@ const Footer = () => {
             <p className="text-gray-600 mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
             </p>
-            <div className="flex">
-              <input type="email" placeholder="E-Mail Address" className="w-full px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-500" />
-              <button className="bg-orange-500 text-white font-medium px-6 py-3 rounded-r-lg hover:bg-orange-600 transition duration-300">Join Now</button>
+            <div className="flex max-w-md">
+              <input type="email" placeholder="E-Mail Address" className="flex-grow px-3 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-500" />
+              <button className="px-6 py-3 bg-orange-500 text-white font-medium rounded-r-lg hover:bg-orange-600 transition duration-300">Join Now</button>
             </div>
           </div>
 
@@ -94,7 +101,7 @@ const Footer = () => {
                   if (link === 'Privacy Policy') {
                     return (
                       <li key={link} className="mb-2">
-                        <Link to="/privacy-policy" className="text-gray-600 hover:text-orange-500">{link}</Link>
+                        <Link to="/privacy-policy" className="text-gray-600 hover:text-orange-500">Privacy Policy</Link>
                       </li>
                     );
                   }
@@ -107,9 +114,13 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-medium text-xl mb-4">Admin Pages</h3>
+              <h3 className="font-medium text-xl mb-4">Resources</h3>
               <ul>
-                {adminLinks.map(link => <li key={link} className="mb-2"><a href="#" className="text-gray-600 hover:text-orange-500">{link}</a></li>)}
+                {Object.entries(resourceLinks).map(([name, path]) => (
+                  <li key={name} className="mb-2">
+                    <Link to={path} className="text-gray-600 hover:text-orange-500">{name}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

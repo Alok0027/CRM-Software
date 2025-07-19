@@ -15,12 +15,12 @@ const featuresData = [
 
 const Features = () => {
   return (
-    <section className="bg-amber-700 text-white py-20 px-10 font-sans w-screen h-screen mt-40">
+    <section className="bg-orange-500 text-white py-20 px-10 font-sans w-screen h-screen mt-16">
       <div className="max-w-7xl mx-auto grid grid-cols-2 gap-16 items-center">
         <div>
           <h2 className="text-5xl font-medium leading-tight mb-6">Exceptional Features, Seamless Performance</h2>
           <p className="mb-10">
-            Zestful takes web design to the next level with a robust set of exceptional features designed to enhance your online presence. From stunning customization options to powerful performance improvements, we've crafted Zestful to empower your digital journey. Explore our feature-rich template and unlock the potential of your online presence.
+            ClientNest takes web design to the next level with a robust set of exceptional features designed to enhance your online presence. From stunning customization options to powerful performance improvements, we've crafted ClientNest to empower your digital journey. Explore our feature-rich software and unlock the potential of your online presence.
           </p>
           <div className="grid grid-cols-2 gap-6">
             {featuresData.map((feature, index) => (

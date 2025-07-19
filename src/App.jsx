@@ -33,12 +33,16 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import ApiReference from './pages/ApiReference';
+import StatusPage from './pages/StatusPage';
+import Changelog from './pages/Changelog';
+import Security from './pages/Security';
+import SystemStatus from './pages/SystemStatus';
 
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Dashboard from './pages/Dashboard';
 import Contacts from './pages/Contacts';
-import Task from './pages/Task';
 import Setting from './pages/Setting';
 import Marketplace from './pages/DashboardPages/Marketplace';
 import AnalyticsDashboard from './pages/DashboardPages/Tables';
@@ -47,6 +51,12 @@ import Leads from './pages/DashboardPages/Leads';
 import Profile from './pages/DashboardPages/Profile';
 import Market from './pages/DashboardPages/Market';
 import Opportunity from './pages/DashboardPages/Opportunity';
+import Automation from './pages/DashboardPages/Automation';
+import DataIntegration from './pages/DashboardPages/DataManagement/Dataintegration';
+import DataModel from './pages/DashboardPages/DataManagement/DataModel';
+import DataEnrichment from './pages/DashboardPages/DataManagement/Dataenrichment';
+import DataSets from './pages/DashboardPages/DataManagement/DataSets';
+import Task from './pages/DashboardPages/Task';
 
 const DashboardLayout = ({ children }) => (
   <div className="flex">
@@ -102,6 +112,14 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="reset-password" element={<ResetPassword />} />
+            
+            {/* Resource Pages */}
+            <Route path="documentation" element={<Documentation />} />
+            <Route path="api-reference" element={<ApiReference />} />
+            <Route path="status" element={<StatusPage />} />
+            <Route path="changelog" element={<Changelog />} />
+            <Route path="security" element={<Security />} />
+            <Route path="system-status" element={<SystemStatus />} />
           </Route>
 
           
@@ -150,6 +168,34 @@ function App() {
             path="/market"
             element={<DashboardLayout><Market /></DashboardLayout>}
           />
+          <Route
+            path="/automation"
+            element={<DashboardLayout><Automation /></DashboardLayout>}
+          />
+          <Route
+            path="/data-integration"
+            element={<DashboardLayout><DataIntegration /></DashboardLayout>}
+          />
+          <Route
+            path="/data-model"
+            element={<DashboardLayout><DataModel /></DashboardLayout>}
+          />
+          <Route
+            path="/data-enrichment"
+            element={<DashboardLayout><DataEnrichment /></DashboardLayout>}
+          />
+          <Route
+            path="/data-sets"
+            element={<DashboardLayout><DataSets /></DashboardLayout>}
+          />
+
+        <Route
+          path="/Task"
+          element={<DashboardLayout><Task /></DashboardLayout>}
+        />
+
+
+
         </Routes>
       )}
     </div>

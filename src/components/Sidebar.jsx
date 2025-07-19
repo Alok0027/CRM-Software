@@ -3,35 +3,55 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FiHome,
-  FiUser,
   FiUsers,
-  FiLogIn,
-  FiGrid,
-  FiTrello,
-  FiHelpCircle,
+  FiUserPlus,
   FiPieChart,
   FiTrendingUp,
+  FiLogIn,
+  FiZap,
+  FiDatabase,
+  FiChevronDown,
+  FiChevronRight,
   FiBarChart2,
-  FiUserPlus
+  FiHelpCircle
 } from 'react-icons/fi';
 import zestfulLogo from '../assets/clientnestlogo.jpeg';
 
 const navItems = [
   { name: 'Dashboard', icon: <FiHome />, path: '/dashboard' },
   { name: 'Analytics', icon: <FiBarChart2 />, path: '/dashboard/analytics' },
-  { name: 'Kanban', icon: <FiTrello />, path: '/dashboard/kanban' },
   { name: 'Contacts', icon: <FiUsers />, path: '/contacts' },
   { name: 'Leads', icon: <FiUserPlus />, path: '/leads' },
-  { name: 'Profile', icon: <FiUser />, path: '/dashboard/profile' },
   { name: 'Market', icon: <FiPieChart />, path: '/market' },
-  { name: 'Oppotunity', icon: <FiTrendingUp />, path: '/opportunity' },
-  { name: 'Sign In', icon: <FiLogIn />, path: '/login' },
+  { name: 'Tasks', icon: <FiTrendingUp />, path: '/task' },
+  { name: 'Deals', icon: <FiTrendingUp />, path: '/opportunity' },
+  { name: 'Automation', icon: <FiZap />, path: '/automation' },
+  { 
+    name: 'Data Management', 
+    icon: <FiDatabase />, 
+    path: '/data-management',
+    subItems: [
+      { name: 'Data Integration', path: '/data-integration' },
+      { name: 'Data Model', path: '/data-model' },
+      { name: 'Data Enrichment', path: '/data-enrichment' },
+      { name: 'Data Sets', path: '/data-sets' }
+    ]
+  },
+  { name: 'Sign Out', icon: <FiLogIn />, path: '/' },
 ];
 
 const Sidebar = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const location = useLocation();
+  const [expandedItems, setExpandedItems] = useState({});
+  const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
+
+  const toggleExpanded = (itemName) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [itemName]: !prev[itemName]
+    }));
+  };
 
   const handleMouseLeave = () => {
     setIsExpanded(false);
@@ -62,29 +82,60 @@ const Sidebar = () => {
       )}
       
       <nav className="flex flex-col gap-2 px-4 py-6 flex-grow">
-        {navItems.map((item) => {
-          const commonClasses = `flex items-center gap-4 px-4 py-2.5 rounded-lg font-normal transition-all duration-300 ${item.bgColor || ''}`;
-          const activeClasses = "bg-orange-500 text-white shadow-lg";
-          const inactiveClasses = `text-gray-500 hover:text-gray-900 hover:bg-gray-100 ${item.bgColor ? 'hover:bg-gray-100' : ''}`;
-          const isLinkActive = location.pathname === item.path;
-
-          const linkContent = (
-            <>
-              <span className="text-2xl flex-shrink-0">{item.icon}</span>
-              {isExpanded && <span className="whitespace-nowrap">{item.name}</span>}
-            </>
-          );
-
-          return (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`${commonClasses} ${isLinkActive ? activeClasses : inactiveClasses} ${!isExpanded ? 'justify-center' : ''}`}
-            >
-              {linkContent}
-            </Link>
-          );
-        })}
+        <ul className="space-y-2">
+          {navItems.map((item, index) => (
+            <li key={index} className="mb-2">
+              {item.subItems ? (
+                <div>
+                  <button
+                    onClick={() => toggleExpanded(item.name)}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-colors duration-200 ${
+                      location.pathname.startsWith('/data-')
+                        ? 'bg-orange-100 text-orange-600'
+                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+                    }`}
+                  >
+                    <div className="flex items-center">
+                      <span className="mr-3 text-lg">{item.icon}</span>
+                      {isExpanded && <span className="font-medium">{item.name}</span>}
+                    </div>
+                    {isExpanded && (expandedItems[item.name] ? <FiChevronDown /> : <FiChevronRight />)}
+                  </button>
+                  {expandedItems[item.name] && isExpanded && (
+                    <ul className="ml-8 mt-2 space-y-1">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link
+                            to={subItem.path}
+                            className={`block px-4 py-2 rounded-lg transition-colors duration-200 text-sm ${
+                              location.pathname === subItem.path
+                                ? 'bg-orange-100 text-orange-600 border-r-4 border-orange-600'
+                                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+                            }`}
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${
+                    (item.path === '/dashboard' ? location.pathname === item.path : location.pathname.startsWith(item.path))
+                      ? 'bg-orange-100 text-orange-600 border-r-4 border-orange-600'
+                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+                  }`}
+                >
+                  <span className="mr-3 text-lg">{item.icon}</span>
+                  {isExpanded && <span className="font-medium">{item.name}</span>}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
       </nav>
 
       {isExpanded && (

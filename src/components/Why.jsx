@@ -25,15 +25,15 @@ const Why = () => {
   const reasons = [
     {
       title: 'Visually Striking Design:',
-      description: 'Zestful empowers you to create visually stunning websites that leave a lasting impression on your visitors.',
+      description: 'ClientNest empowers you to create stunning CRM records that leave a lasting impression on your customers.',
     },
     {
       title: 'User-Friendly Interface:',
-      description: 'Enjoy an intuitive and user-friendly interface that simplifies website management, making it accessible for all skill levels.',
+      description: 'Enjoy an intuitive and user-friendly interface that simplifies CRM management, making it accessible for all skill levels.',
     },
     {
       title: 'Continuous Innovation:',
-      description: 'Zestful is committed to ongoing updates and enhancements, ensuring your website remains at the forefront of design and technology trends.',
+      description: 'ClientNest is committed to ongoing updates and enhancements, ensuring your software remains at the forefront of design and technology trends.',
     },
   ];
 
@@ -47,7 +47,7 @@ const Why = () => {
         <div>
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose ClientNest?</h2>
           <p className="text-gray-600 mb-8">
-            ClientNest is your passport to an enriched online journey. Our SaaS Webflow Template offers a range of benefits to help you thrive in the digital realm. Here are some compelling reasons why Zestful is the ideal choice for your web presence:
+            ClientNest is your passport to an enriched online journey. Our SaaS offers a range of benefits to help you thrive in the digital realm. Here are some compelling reasons why ClientNest is the ideal choice for your web application:
           </p>
           <ul className="space-y-6">
             {reasons.map((reason, index) => (

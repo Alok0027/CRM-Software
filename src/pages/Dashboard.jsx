@@ -142,7 +142,7 @@ const Dashboard = () => {
                   {
                     label: 'Revenue - Tier 1',
                     data: [500, 600, 700, 800, 900, 800, 850],
-                    backgroundColor: '#8B5CF6',
+                    backgroundColor: '#D97706',
                     barPercentage: 0.3,
                     categoryPercentage: 0.5,
                     borderRadius: 8,
@@ -150,7 +150,7 @@ const Dashboard = () => {
                   {
                     label: 'Revenue - Tier 2',
                     data: [300, 400, 450, 500, 600, 550, 580],
-                    backgroundColor: '#06B6D4',
+                    backgroundColor: '#F97316',
                     barPercentage: 0.3,
                     categoryPercentage: 0.5,
                     borderRadius: 8,

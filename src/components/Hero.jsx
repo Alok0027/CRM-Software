@@ -41,19 +41,19 @@ const Hero = () => {
     transition: 'transform 0.2s ease-out',
   };
   return (
-    <div className="text-center py-16 px-5 bg-white font-sans mt-16">
+    <div className="text-center py-16 px-5 bg-white font-sans mt-6">
       <div className="relative h-64 mb-10">
-        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-7xl font-black leading-tight" style={{ fontFamily: "'Inter', sans-serif" }}>
-          <span className="text-neutral-700">Unleash the Power of Your</span><br /><span className="text-neutral-700">Business with</span> <span className="text-orange-500">Zestful</span><span className="text-neutral-700">!</span>
+        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-7xl font-black leading-tight" style={{ fontFamily: "'Inter', sans-serif, fontWeight: 1000" }}>
+          <span className="text-neutral-700">Unleash the Power of Your</span><br /><span className="text-neutral-700">Business with</span> <span className="text-orange-500">ClientNest</span><span className="text-neutral-700">!</span>
         </h1>
       </div>
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-lg font-light text-gray-600 mb-8 max-w-2xl mx-auto">
-          Your gateway to a vibrant online presence. Our SaaS Webflow Template infuses your website with citrusy energy, ensuring you stand out and captivate your audience. Elevate your digital presence with Zestful today!
+          Your gateway to a vibrant online presence. Our SaaS software infuses your website with citrusy energy, ensuring you stand out and captivate your audience. Elevate your digital presence with ClientNest today!
         </p>
       </div>
       <div className="mt-16">
-        <div className="w-full overflow-hidden logo-carousel">
+        <div className="w-full logo-carousel">
           <div className="flex animate-scroll">
             {[...logos, ...logos].map((logo, index) => (
               <img key={index} src={logo.src} alt={logo.alt} className="h-8 mx-16 flex-shrink-0 filter grayscale opacity-60" />
@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="mt-12 flex justify-center">
-           <img src={heroimg} alt="Dashboard preview" className="w-11/12 rounded-lg shadow-xl" style={imageStyle} />
+           <img src={heroimg} alt="Dashboard preview" className="w-9/12 rounded-lg shadow-xl" style={imageStyle} />
         </div>
       </div>
     </div>

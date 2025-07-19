@@ -49,7 +49,7 @@ const salesFunnelChart = {
     datasets: [{
       label: 'Deals',
       data: salesFunnelData.values,
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+      backgroundColor: ['#FFB84C', '#FFA559', '#FF8C42', '#FF7F3F', '#FF6F3C'],
     }],
   },
   options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { grid: { display: false } } } },
@@ -62,7 +62,7 @@ const leadSourceChart = {
     datasets: [{
       label: 'Revenue by Source',
       data: leadSourceData.revenue,
-      backgroundColor: ['#4BC0C0', '#FF6384', '#FFCE56', '#36A2EB'],
+      backgroundColor: ['#FFB84C', '#FFA559', '#FF8C42', '#FF7F3F'],
       borderColor: '#ffffff',
       borderWidth: 2,
     }],
@@ -75,9 +75,9 @@ const teamActivityChart = {
   data: {
     labels: teamActivityData.labels,
     datasets: [
-      { label: 'Calls', data: teamActivityData.calls, backgroundColor: 'rgba(255, 99, 132, 0.7)' },
-      { label: 'Emails', data: teamActivityData.emails, backgroundColor: 'rgba(54, 162, 235, 0.7)' },
-      { label: 'Meetings', data: teamActivityData.meetings, backgroundColor: 'rgba(255, 206, 86, 0.7)' },
+      { label: 'Calls', data: teamActivityData.calls, backgroundColor: 'rgba(255, 184, 76, 0.8)' },
+      { label: 'Emails', data: teamActivityData.emails, backgroundColor: 'rgba(255, 140, 66, 0.8)' },
+      { label: 'Meetings', data: teamActivityData.meetings, backgroundColor: 'rgba(255, 127, 63, 0.8)' },
     ],
   },
   options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { stacked: true }, y: { stacked: true } }, plugins: { legend: { position: 'bottom' } }, scales: { x: { grid: { display: false } }, y: { grid: { display: false } } } },
@@ -89,7 +89,7 @@ const dealStageChart = {
     labels: dealStageData.labels,
     datasets: [{
       data: dealStageData.values,
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+      backgroundColor: ['#FFB84C', '#FFA559', '#FF8C42', '#FF7F3F', '#FF6F3C'],
     }],
   },
   options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } }, scales: { x: { grid: { display: false } }, y: { grid: { display: false } } } },
@@ -100,8 +100,8 @@ const taskCompletionChart = {
   data: {
     labels: taskCompletionData.labels,
     datasets: [
-      { label: 'Completed', data: taskCompletionData.completed, backgroundColor: 'rgba(75, 192, 192, 0.2)', borderColor: 'rgba(75, 192, 192, 1)', borderWidth: 1 },
-      { label: 'Pending', data: taskCompletionData.pending, backgroundColor: 'rgba(255, 99, 132, 0.2)', borderColor: 'rgba(255, 99, 132, 1)', borderWidth: 1 },
+      { label: 'Completed', data: taskCompletionData.completed, backgroundColor: 'rgba(255, 184, 76, 0.3)', borderColor: '#FF7F3F', borderWidth: 1 },
+      { label: 'Pending', data: taskCompletionData.pending, backgroundColor: 'rgba(255, 184, 76, 0.3)', borderColor: '#FF7F3F', borderWidth: 1 },
     ],
   },
   options: { responsive: true, maintainAspectRatio: false, scales: { r: { pointLabels: { font: { size: 14 } } } } },
@@ -135,8 +135,8 @@ const AnalyticsDashboard = () => {
     if (chart) {
       const ctx = chart.ctx;
       const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-      gradient.addColorStop(0, 'rgba(75, 192, 192, 0.5)');
-      gradient.addColorStop(1, 'rgba(75, 192, 192, 0)');
+      gradient.addColorStop(0, 'rgba(255,127,63,0.7)');
+      gradient.addColorStop(1, 'rgba(255,184,76,0.05)');
 
       setSalesChartData({
         labels: quarterlySalesData.labels,
@@ -145,8 +145,8 @@ const AnalyticsDashboard = () => {
           data: quarterlySalesData.revenue,
           fill: true,
           backgroundColor: gradient,
-          borderColor: 'rgba(75, 192, 192, 1)',
-          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          borderColor: '#FF7F3F',
+          pointBackgroundColor: '#FFB84C',
           tension: 0.4,
         }],
       });
